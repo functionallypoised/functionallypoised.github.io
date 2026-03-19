@@ -4,6 +4,12 @@ h1 {
 h2 {
       color: blueviolet"
 }
-p {
+h3 {
     color:aqua
+}
+h4 {
+    color:rgb(139, 40, 215)
+}
+p {
+    color:rgb(34, 0, 255)
 }
