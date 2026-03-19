@@ -1,12 +1,12 @@
 /* h1 {
   color: blue;
 } */
-class
+h3,
 .blue-color {
-    color: blue
+  color: blue;
 }
 
-h2 {
+/* h2 {
       color: blueviolet"
 }
 h3 {
@@ -14,11 +14,11 @@ h3 {
 }
 h4 {
     color:rgb(139, 40, 215)
-}
+} */
 p {
-    color:rgb(34, 0, 255)
+  color: rgb(34, 0, 255);
 }
 
 #venue {
-    color:blueviolet
+  color: blueviolet;
 }
