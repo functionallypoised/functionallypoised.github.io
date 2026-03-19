@@ -1,6 +1,11 @@
-h1 {
+/* h1 {
   color: blue;
+} */
+class
+.blue-color {
+    color: blue
 }
+
 h2 {
       color: blueviolet"
 }
@@ -13,10 +18,7 @@ h4 {
 p {
     color:rgb(34, 0, 255)
 }
-class
-.blue-color {
-    color: blue
-}
+
 #venue {
     color:blueviolet
 }
