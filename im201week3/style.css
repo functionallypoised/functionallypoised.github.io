@@ -7,8 +7,11 @@ body {
 }
 
 h1 {
-  font-family: "monsterrat thin", Verdana, Tahoma, sans-serif;
-  font-size: 18px;
+.montserrat-thin
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <500>;
+  font-style: thin;
 }
 
 h3,
@@ -17,22 +20,34 @@ h3,
 }
 
 h2 {
-  font-family: "monsterrat extra-light", Verdana, Tahoma, sans-serif;
-  font-size: 16px;
+.montserrat-normal
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: normal;
 }
 h3 {
-  font-family: "monsterrat", Verdana, Tahoma, sans-serif;
-  font-size: 14px;
+.montserrat-light
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <150>;
+  font-style: light;
 }
 h4 {
-  font-family: "monsterrat extra-light", Verdana, Tahoma, sans-serif;
-  font-size: 12px;
+.montserrat-extralight
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <600>;
+  font-style: extralight;
 }
 
 p {
   color: rgb(34, 0, 255);
-  font-family: "monsterrat thin", Verdana, Tahoma, sans-serif;
-  font-size: 10px;
+.montserrat-p
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: light;
 }
 
 ul {
