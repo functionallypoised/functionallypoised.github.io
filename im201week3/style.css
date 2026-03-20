@@ -42,5 +42,6 @@ section {
   border: 2px solid red;
 } */
 .border-styling {
-  border: 12px solid red;
+  border: 2px solid red;
+  text-align: center;
 }
