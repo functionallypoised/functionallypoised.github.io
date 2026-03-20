@@ -26,6 +26,9 @@ p {
 section {
   text-align: center;
 }
-section > p {
+/* section > p {
+  border: 2px solid red;
+} */
+.border-styling {
   border: 2px solid red;
 }
