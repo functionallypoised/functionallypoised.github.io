@@ -24,8 +24,11 @@ h4 {
   font-family: monsterrat extra-light;
   font-size: 8px;
 }
+
 p {
   color: rgb(34, 0, 255);
+  font-family: monsterrat thin;
+  font-size: 11px;
 }
 
 #venue {
