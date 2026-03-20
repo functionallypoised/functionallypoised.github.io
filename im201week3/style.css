@@ -3,7 +3,7 @@ I mde these decisions due to
 and my styleguide is set out in figma here...
 */
 h1 {
-  font-family: monsterrat thin;
+  font-family: "monsterrat thin", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 18px;
 }
 
@@ -13,21 +13,21 @@ h3,
 }
 
 h2 {
-  font-family: monsterrat light;
+  font-family: "monsterrat extra-light", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
 }
 h3 {
-  font-family: monsterrat;
+  font-family: "monsterrat", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
 }
 h4 {
-  font-family: monsterrat extra-light;
+  font-family: "monsterrat extra-light", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
 }
 
 p {
   color: rgb(34, 0, 255);
-  font-family: monsterrat thin;
+  font-family: "monsterrat thin", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10px;
 }
 
