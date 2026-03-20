@@ -1,20 +1,29 @@
-/* h1 {
-  color: blue;
-} */
+/* My design choices are outlines as per:
+I mde these decisions due to
+and my styleguide is set out in figma here...
+*/
+h1 {
+  font-family: monsterrat thin;
+  font-size: 14px;
+}
+
 h3,
 .blue-color {
   color: blue;
 }
 
-/* h2 {
-      color: blueviolet"
+h2 {
+  font-family: monsterrat light;
+  font-size: 12px;
 }
 h3 {
-    color:aqua
+  font-family: monsterrat;
+  font-size: 10px;
 }
 h4 {
-    color:rgb(139, 40, 215)
-} */
+  font-family: monsterrat extra-light;
+  font-size: 8px;
+}
 p {
   color: rgb(34, 0, 255);
 }
