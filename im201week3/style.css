@@ -2,6 +2,10 @@
 I mde these decisions due to
 and my styleguide is set out in figma here...
 */
+body {
+  margin-left: 30px;
+}
+
 h1 {
   font-family: "monsterrat thin", Verdana, Tahoma, sans-serif;
   font-size: 18px;
@@ -31,8 +35,13 @@ p {
   font-size: 10px;
 }
 
+ul {
+  list-style-type: disc;
+  margin-left: 34px;
+}
+
 #venue {
-  color: blueviolet;
+  color: rgb(57, 89, 218);
 }
 
 section {
