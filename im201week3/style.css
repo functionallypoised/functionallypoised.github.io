@@ -10,7 +10,7 @@ h1 {
 .montserrat-thin
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <500>;
+  font-weight: 500;
   font-style: thin;
 }
 
@@ -23,21 +23,21 @@ h2 {
 .montserrat-normal
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <300>;
+  font-weight: 300;
   font-style: normal;
 }
 h3 {
 .montserrat-light
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <150>;
+  font-weight: 150;
   font-style: light;
 }
 h4 {
 .montserrat-extralight
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <600>;
+  font-weight: 600;
   font-style: extralight;
 }
 
@@ -46,7 +46,7 @@ p {
 .montserrat-p
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <300>;
+  font-weight: 300;
   font-style: light;
 }
 
