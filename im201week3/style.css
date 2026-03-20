@@ -4,6 +4,7 @@ and my styleguide is set out in figma here...
 */
 body {
   margin-left: 30px;
+  background-color: rgb(156, 182, 206);
 }
 
 h1 {
@@ -66,5 +67,5 @@ section {
   border: 2px solid red;
 } */
 .border-styling {
-  border: 2px solid red;
+  border: 2px solid rgb(0, 191, 255);
 }
