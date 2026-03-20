@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-.montserrat-thin
+  /* .montserrat-thin */
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -21,21 +21,21 @@ h3,
 }
 
 h2 {
-.montserrat-normal
+  /* .montserrat-normal */
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }
 h3 {
-.montserrat-light
+  /* .montserrat-light */
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 150;
   font-style: light;
 }
 h4 {
-.montserrat-extralight
+  /* .montserrat-extralight */
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -44,7 +44,7 @@ h4 {
 
 p {
   color: rgb(34, 0, 255);
-.montserrat-p
+  /* .montserrat-p */
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
@@ -52,7 +52,7 @@ p {
 }
 
 ul {
-  list-style-type: disc;
+  list-style-type: lower-latin;
   margin-left: 34px;
 }
 
