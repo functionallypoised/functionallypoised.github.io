@@ -69,4 +69,5 @@ section {
 } */
 .border-styling {
   border: 2px solid rgb(0, 191, 255);
+  border-style: inset;
 }
