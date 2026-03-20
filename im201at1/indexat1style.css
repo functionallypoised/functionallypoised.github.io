@@ -1,0 +1,73 @@
+/* My design choices are outlines as per:
+I mde these decisions due to
+and my styleguide is set out in figma here...
+*/
+body {
+  margin-left: 30px;
+  background-color: rgb(156, 182, 206);
+}
+
+h1 {
+  /* .montserrat-thin */
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: thin;
+}
+
+h3,
+.blue-color {
+  color: blue;
+}
+
+h2 {
+  /* .montserrat-normal */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+h3 {
+  /* .montserrat-light */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: light;
+}
+h4 {
+  /* .montserrat-extralight */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: extralight;
+}
+
+p {
+  color: rgb(34, 0, 255);
+  /* .montserrat-p */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: light;
+}
+
+ul {
+  list-style-type: circle;
+  margin-right: 34px;
+}
+
+#venue {
+  color: rgb(57, 89, 218);
+}
+
+section {
+  text-align: right;
+}
+/* section > p {
+  border: 2px solid red;
+} */
+.border-styling {
+  border: 2px solid rgb(0, 191, 255);
+  border-style: inset;
+}
