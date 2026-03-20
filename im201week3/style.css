@@ -9,6 +9,7 @@ body {
 
 h1 {
   /* .montserrat-thin */
+  text-align: right;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -53,7 +54,7 @@ p {
 
 ul {
   list-style-type: circle;
-  margin-left: 34px;
+  margin-right: 34px;
 }
 
 #venue {
@@ -61,11 +62,12 @@ ul {
 }
 
 section {
-  text-align: center;
+  text-align: right;
 }
 /* section > p {
   border: 2px solid red;
 } */
 .border-styling {
   border: 2px solid rgb(0, 191, 255);
+  border-width: 50px;
 }
