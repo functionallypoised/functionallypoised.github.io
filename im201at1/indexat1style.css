@@ -18,7 +18,7 @@ h1 {
 
 h3,
 .blue-color {
-  color: blue;
+  color: rgb(225, 255, 208);
 }
 
 h2 {
@@ -44,7 +44,7 @@ h4 {
 }
 
 p {
-  color: rgb(34, 0, 255);
+  color: rgb(20, 8, 100);
   /* .montserrat-p */
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -68,6 +68,6 @@ section {
   border: 2px solid red;
 } */
 .border-styling {
-  border: 2px solid rgb(0, 191, 255);
+  border: 2px solid rgb(120, 191, 214);
   border-style: inset;
 }
