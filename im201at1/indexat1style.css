@@ -52,6 +52,14 @@ p {
   font-style: light;
 }
 
+div {
+  color: rgb(20, 8, 100);
+  /* .montserrat-p */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: light;
+}
 ul {
   list-style-type: circle;
   margin-right: 34px;
