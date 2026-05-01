@@ -37,7 +37,7 @@ console.log(popButton);
 
 popButton.addEventListener("click", makeItPop);
 
-function popAudio() {
+function makeItPop() {
   popSound.play();
   msg.textContent = "popping...";
 }
