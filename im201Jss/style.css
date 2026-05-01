@@ -4,7 +4,7 @@ audio {
 }
 
 button {
-  fontsize: 1.3rem;
+  font-size: 1.3rem;
   border-radius: 12px;
   padding: 8px;
   cursor: pointer;
@@ -16,6 +16,5 @@ button:hover {
 }
 
 video {
-    width: 600px
-    height: 400px
+  width: 600px;
 }
