@@ -3,6 +3,10 @@
 const aiportAudio = document.querySelector("#airport-audio");
 console.log(airportAudio);
 
+// let us access video too
+const starVideo = document.querySelector("#star-video");
+console.log(starVideo);
+
 //similarly access the play button
 const playButton = document.querySelector("#play-button");
 console.log(playButton);
@@ -14,8 +18,8 @@ function playAudio() {
   msg.textContent = "airport is playing";
 }
 
-//similarly access the play button
-const playButton = document.querySelector("#pause-button");
+//similarly access the pause button
+const pauseButton = document.querySelector("#pause-button");
 console.log(pauseButton);
 
 pauseButton.addEventListener("click", pauseAudio);
