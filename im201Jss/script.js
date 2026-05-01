@@ -26,11 +26,12 @@ function pauseAudio() {
 }
 
 //similarly access the pop button
-const popSound = document.querySelector("#pop-audio");
+const popAudio = document.querySelector("#pop-audio");
+console.log(popAudio);
 const popButton = document.querySelector("#pop-button");
 console.log(popButton);
 
-popButton.addEventListener("click", popAudio);
+popButton.addEventListener("click", makeItPop);
 
 function popAudio() {
   popSound.play();
