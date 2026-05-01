@@ -42,14 +42,14 @@ function makeItPop() {
   msg.textContent = "popping...";
 }
 
-const body = DocumentFragment.querySelector("body");
-body.addEventListener("keydown", playVideo);
+// const body = DocumentFragment.querySelector("body");
+// body.addEventListener("keydown", playVideo);
 
-function playVideo() {
-  if (event.code === "Space") {
-    // Prevent default behaviour (like scrolling down page)
-    event.preventDefault();
-    console.log("Spacebar was pressed!");
-    //starVideo.play();
-  }
-}
+// function playVideo() {
+//   if (event.code === "Space") {
+//     // Prevent default behaviour (like scrolling down page)
+//     event.preventDefault();
+//     console.log("Spacebar was pressed!");
+//     //starVideo.play();
+//   }
+// }
