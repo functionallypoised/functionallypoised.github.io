@@ -1,6 +1,6 @@
 //first get access to the audito element so we can control it from here
 
-const aiportAudio = document.querySelector("#airport-audio");
+const airportAudio = document.querySelector("#airport-audio");
 console.log(airportAudio);
 
 // let us access video too
@@ -41,3 +41,15 @@ function makeItPop() {
   popAudio.play();
   msg.textContent = "popping...";
 }
+
+const body = DocumentFragment.querySelector("body");
+body.addEventListener("keydown", playVideo);
+
+function playVideo() {
+    if (event.code === "Space)" {
+        // Prevent default behaviour (like scrolling down page)
+        event.preventDefault();
+        console.log("Spacebar was pressed!");
+        //starVideo.play();
+    }
+    }
