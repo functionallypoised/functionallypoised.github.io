@@ -61,9 +61,9 @@ audio {
 
 video {
   display: block;
-  width: 600px;
+  width: 3840px;
   max-width: 90vw;
-  margin-top: 20px;
+  margin-top: 540px;
   border: 2px inset rgb(120, 191, 214);
 }
 
