@@ -1,24 +1,52 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InteractiveMedia201AT2</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
+<!-- My body indexing how the html will portray my media page. -->
+<body>
+  <h1>P-HASE ARCHIVE</h1>
 
-  <body>
-    <h1>Learning to play audio on webpage</h1>
+  <!-- a section of contained divisions of my tracks to 
+   form a playlist UI -->
+  <section class="playlist-container">
 
-    <audio id="airport-audio" src="airport.mp3" controls></audio>
-    <audio id="pop-audio" src="pop.mp3" controls></audio>
+    <div class="track">
+      <h3>Hes</h3>
+      <button onclick="loadTrack(1)">Play</button>
+      <button onclick="pauseTrack()">Pause</button>
+    </div>
 
-    <button id="play-button">play-audio</button>
-    <button id="pause-button">pause-audio</button>
-    <button id="pop-button">pop-audio</button>
+    <div class="track">
+      <h3>Dry Down</h3>
+      <button onclick="loadTrack(2)">Play</button>
+      <button onclick="pauseTrack()">Pause</button>
+    </div>
 
-    <p id="msg"></p>
+    <div class="track">
+      <h3>Leapt</h3>
+      <button onclick="loadTrack(3)">Play</button>
+      <button onclick="pauseTrack()">Pause</button>
+    </div>
+
+    <div class="track">
+      <h3>Water Feature</h3>
+      <button onclick="loadTrack(4)">Play</button>
+      <button onclick="pauseTrack()">Pause</button>
+    </div>
+
+  </section>
+<!-- My classed id tags of media, to connect 
+JS with the media divisions contained above -->
+
+  <section class="player-container">
+
+    <audio id="music-player" controls></audio>
+
+    <p id="msg">Select a track.</p>
+
+  </section>
+
+  <!-- button to play all tracks at once ( for avantGard fun ) -->
+
+  <button onclick="playAllTracks()">Play All Tracks</button>
+  <!-- the video media content id tags to connect
+  JS controls with the video media -->
 
     <video id="star-video" src="stardust.mp4" controls></video>
   </body>

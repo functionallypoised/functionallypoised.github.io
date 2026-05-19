@@ -83,3 +83,28 @@ button {
 button:hover {
   scale: 0.9;
 }
+
+/* media playlist UI style */
+
+.playlist-container {
+  margin-top: 40px;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 20px;
+  padding: 12px;
+
+  border: 2px inset rgb(120, 191, 214);
+}
+
+.player-container {
+  margin-top: 50px;
+}
+
+audio {
+  width: 80%;
+}
