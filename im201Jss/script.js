@@ -1,3 +1,5 @@
+// check J S link and is running
+console.log("JS IS RUNNING");
 // connect html element to divisioned id tag,
 // 
 // for js to select as a constrained variable
