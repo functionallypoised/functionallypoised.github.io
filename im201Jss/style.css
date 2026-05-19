@@ -41,7 +41,7 @@ ul {
 }
 
 section {
-  text-align: right;
+  text-align: center;
 }
 
 #venue {
@@ -62,8 +62,8 @@ audio {
 video {
   display: block;
   width: 3840px;
-  max-width: 90vw;
-  margin-top: 540px;
+  max-width: 100vw;
+  margin-top: 10px;
   border: 2px inset rgb(120, 191, 214);
 }
 
@@ -109,8 +109,11 @@ button:hover {
 
 .player-container {
   margin-top: 40px;
+    text-align: center;
 }
 
 audio {
   width: 80%;
+  display: block;
+  margin: 0 auto;
 }
