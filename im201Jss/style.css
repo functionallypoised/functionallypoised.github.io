@@ -1,20 +1,85 @@
+/*  for continuity, I appreciate the style I've maintained thus far */
+
+body {
+  margin-left: 30px;
+  background-color: rgb(156, 182, 206);
+  color: rgb(20, 8, 100);
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  text-align: right;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+h3,
+.blue-color {
+  color: rgb(225, 255, 208);
+}
+
+h3 {
+  font-weight: 150;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+p,
+div {
+  color: rgb(20, 8, 100);
+  font-weight: 300;
+}
+
+ul {
+  list-style-type: circle;
+  margin-right: 34px;
+}
+
+section {
+  text-align: right;
+}
+
+#venue {
+  color: rgb(57, 89, 218);
+}
+
+.border-styling {
+  border: 2px inset rgb(120, 191, 214);
+}
+
+/* A V media displays */
+
 audio {
   display: block;
   margin-bottom: 20px;
 }
 
+video {
+  display: block;
+  width: 600px;
+  max-width: 90vw;
+  margin-top: 20px;
+  border: 2px inset rgb(120, 191, 214);
+}
+
+/* button style */
+
 button {
   font-size: 1.3rem;
   border-radius: 12px;
-  padding: 8px;
+  padding: 8px 14px;
   cursor: pointer;
   background-color: antiquewhite;
+  color: rgb(20, 8, 100);
+  border: 2px solid rgb(120, 191, 214);
+  font-family: "Montserrat", sans-serif;
 }
 
 button:hover {
   scale: 0.9;
-}
-
-video {
-  width: 600px;
 }
