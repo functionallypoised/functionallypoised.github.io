@@ -81,7 +81,7 @@ function pauseTrack() {
     audio.pause();
   });
 
-  msg.textContent = "Playback paused";
+  msg.textContent = "All Playback paused";
 }
 
 

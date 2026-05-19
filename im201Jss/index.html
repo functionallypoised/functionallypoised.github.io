@@ -18,25 +18,21 @@
     <div class="track">
       <h3>Hes</h3>
       <button onclick="loadTrack(1)">Play</button>
-      <button onclick="pauseTrack()">Pause</button>
     </div>
 
     <div class="track">
       <h3>Dry Down</h3>
       <button onclick="loadTrack(2)">Play</button>
-      <button onclick="pauseTrack()">Pause</button>
     </div>
 
     <div class="track">
       <h3>Leapt</h3>
       <button onclick="loadTrack(3)">Play</button>
-      <button onclick="pauseTrack()">Pause</button>
     </div>
 
     <div class="track">
       <h3>Water Feature</h3>
       <button onclick="loadTrack(4)">Play</button>
-      <button onclick="pauseTrack()">Pause</button>
     </div>
 
   </section>
@@ -53,7 +49,12 @@ JS with the media divisions contained above -->
 
   <!-- button to play all tracks at once ( for avantGard fun ) -->
 
-  <button onclick="playAllTracks()">Play All Tracks</button>
+<section class="master-controls">
+
+  <button onclick="playAllTracks()">Play All</button>
+  <button onclick="pauseTrack()">Pause All</button>
+  
+</section>
   <!-- the video media content id tags to connect
   JS controls with the video media -->
 

@@ -70,9 +70,9 @@ video {
 /* button style */
 
 button {
-  font-size: 1.3rem;
-  border-radius: 12px;
-  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  padding: 4px 7px;
   cursor: pointer;
   background-color: antiquewhite;
   color: rgb(20, 8, 100);
@@ -101,8 +101,14 @@ button:hover {
   border: 2px inset rgb(120, 191, 214);
 }
 
+.master-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
 .player-container {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 audio {
