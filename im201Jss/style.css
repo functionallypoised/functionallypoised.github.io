@@ -55,8 +55,14 @@ section {
 /* A V media displays */
 
 audio {
-  display: block;
-  margin-bottom: 20px;
+  width: 80%;
+
+  filter:
+    hue-rotate(70deg)
+    saturate(0.6)
+    brightness(0.8);
+
+  border-radius: 0px;
 }
 
 video {
@@ -169,19 +175,8 @@ video:hover {
 }
 
 .player-container {
-  margin-top: 4px;
+  margin-top: 18px;
   text-align: center;
-  color: rgb(20, 8, 100);
-  background-color: rgb(120, 191, 214);
-
-  border: 2px solid rgb(225, 255, 208);
-  padding: 18px;
-  width: 82%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow:
-    0 0 12px rgba(225, 255, 208, 0.3),
-    inset 0 0 8px rgb(120, 191, 214);
 }
 
 audio {
