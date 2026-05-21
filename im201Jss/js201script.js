@@ -33,9 +33,14 @@ function pauseCurrentTrack() {
   musicPlayer.pause();
 }
 
-function restartCurrentTrack() {
-  musicPlayer.currentTime = 0;
-  musicPlayer.play();
+function loopCurrentTrack() {
+  musicPlayer.loop = !musicPlayer.loop;
+
+  if (musicPlayer.loop) {
+    msg.textContent = " ~:~ looping singular P-hase layer [ON] ~:~ ";
+  } else {
+    msg.textContent = " ~:~ looping singular P-hase layer [OFF] ~:~ ";
+  }
 }
 
 musicPlayer.addEventListener("timeupdate", function () {

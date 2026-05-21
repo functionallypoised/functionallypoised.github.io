@@ -89,15 +89,16 @@ JS with the media divisions contained above -->
     class="controls-icon"
   />
   </button>
-  <button onclick="restartCurrentTrack()">
+
+  <input id="track-progress" type="range" min="0" max="100" value="0" />
+  
+  <button onclick="loopCurrentTrack()">
     <img
     src="mediaPlaycons/synchronize.png"
-    alt="restart"
+    alt="loop"
     class="controls-icon"
     />
   </button>
-
-  <input id="track-progress" type="range" min="0" max="100" value="0" />
 
   <label>
     speed
