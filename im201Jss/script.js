@@ -178,6 +178,9 @@ idleInterval = setInterval(function () {
 
   }, 800);
 
+  
+  clearInterval(idleInterval);
+
 });
 
 function createAsciiParticlePattern(x, y) {
