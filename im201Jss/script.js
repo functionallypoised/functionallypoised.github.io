@@ -168,8 +168,6 @@ function standby() {
 
   masterButtons[1].classList.add("standby-pulse");
 
-  musicPlayer.pause();
-
   layeredPlayers.forEach(function (audio) {
     audio.pause();
   });
@@ -185,9 +183,6 @@ function reset() {
   deactivateAllButtons();
 
   masterButtons[1].classList.remove("standby-pulse");
-
-  musicPlayer.pause();
-  musicPlayer.currentTime = 0;
 
   layeredPlayers.forEach(function (audio) {
     audio.pause();
