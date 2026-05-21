@@ -110,14 +110,14 @@ button:active {
 to drip down the page as the mouse moves around & hovers */
 
 .melt-particle {
-  position: absolute;
+  position: fixed;
   width: 8px;
   height: 8px;
   background-color: rgb(35, 83, 216);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  animation: dripDown 3.2s linear forwards;
+  animation: dripDown 0.01s linear absolute;
 }
 
 @keyframes dripDown {
