@@ -110,7 +110,7 @@ to drip down the page when idle mouse */
   z-index: 9999;
   opacity: 0.8;
   mix-blend-mode: screen;
-  animation: asciiDrip 2s linear forwards;
+animation: asciiDrip 22s linear forwards;
 }
 
 @keyframes asciiDrip {
