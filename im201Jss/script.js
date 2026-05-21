@@ -170,14 +170,14 @@ function createAsciiParticlePattern(x, y) {
 
         particle.classList.add("ascii-particle");
 
-        particle.style.left = x + colIndex * 5 + "px";
-        particle.style.top = y + rowIndex * 5 + "px";
+        particle.style.left = x + colIndex * 8 + "px";
+        particle.style.top = y + rowIndex * 4 + "px";
 
         document.body.appendChild(particle);
 
         setTimeout(function () {
           particle.remove();
-        }, 2000);
+        }, 4000);
       }
     }
   });

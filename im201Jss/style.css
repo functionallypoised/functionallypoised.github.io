@@ -112,15 +112,16 @@ to drip down the page as the mouse moves around & hovers */
 .ascii-particle {
   position: fixed;
   width: 8px;
-  height: 8px;
+  height: 18px;
   background-color: rgb(35, 83, 216);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  animation: dripDown 0.01s linear spread-out;
+  mix-blend-mode: pinlight;
+  animation: asciiDrip linear forwards;
 }
 
-@keyframes dripDown {
+@keyframes asciiDrip {
   0% {
     opacity: 1;
     transform: translateY(0) scale(1);
