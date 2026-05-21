@@ -143,7 +143,7 @@ input[type="range"] {
 
   background: rgb(20, 8, 100);
 
-  border: 1px solid rgb(166, 178, 187);
+  border: 1px inset rgb(166, 178, 187);
 
 }
 
@@ -195,7 +195,7 @@ button {
   border-radius: 0px;
   padding: 2px;
   cursor: pointer;
-  background-color: rgba(122, 209, 209, 0.548);
+  background-color: rgba(20, 8, 100, 0.548);
   color: rgb(225, 255, 208);
   border: 2px inset rgb(120, 191, 214);
   font-family: "Montserrat", sans-serif;
@@ -306,8 +306,8 @@ its respective containers */
 
 .controls-icon {
 
-  width: 28px;
-  height: 28px;
+  width: 38px;
+  height: 38px;
 
   object-fit: contain;
 
