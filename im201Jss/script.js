@@ -1,48 +1,38 @@
 // check J S link and is running
 console.log("JS IS RUNNING");
 // connect html element to divisioned id tag,
-// 
-// for js to select as a constrained variable
+//
+// for js to select as a constant variable
 // asks connection to load source {the media file},
 // & text indicate messages to User
 
 const musicPlayer = document.querySelector("#music-player");
 const msg = document.querySelector("#msg");
 
-// functions to connect divisioned 
+// functions to connect divisioned
 // track numbers to each variable of media content
-//when User selects a track number, 
+//when User selects a track number,
 // Js selects its respective media source,
 //  informs User which track id is playing from the playlist UI
 
 function loadTrack(trackNumber) {
-
   if (trackNumber === 1) {
-    musicPlayer.src =
-      "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3";
+    musicPlayer.src = "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3";
 
-    msg.textContent = "Now playing: Hes";
-  }
-
-  else if (trackNumber === 2) {
+    msg.textContent = " ~: Hes sound [ON] :~ ";
+  } else if (trackNumber === 2) {
     musicPlayer.src =
       "A-V_media_RMIT-IntMed/2_p-hase_Dry-Down-feat-Ben-Snaath.mp3";
 
-    msg.textContent = "Now playing: Dry Down";
-  }
+    msg.textContent = " ~: Dry Down sound [ON] :~ ";
+  } else if (trackNumber === 3) {
+    musicPlayer.src = "A-V_media_RMIT-IntMed/3_p-hase_Leapt.mp3";
 
-  else if (trackNumber === 3) {
-    musicPlayer.src =
-      "A-V_media_RMIT-IntMed/3_p-hase_Leapt.mp3";
+    msg.textContent = " ~: Leapt sound [ON] :~ ";
+  } else if (trackNumber === 4) {
+    musicPlayer.src = "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3";
 
-    msg.textContent = "Now playing: Leapt";
-  }
-
-  else if (trackNumber === 4) {
-    musicPlayer.src =
-      "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3";
-
-    msg.textContent = "Now playing: Water Feature";
+    msg.textContent = " ~: Water Feature sound [ON] :~ ";
   }
 
   musicPlayer.play();
@@ -57,7 +47,7 @@ const allTracks = [
   "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3",
 ];
 
-// to store the audio objects for each track, sliders to isolate
+// to store the audio objects UI  for each track, sliders to isolate
 //track volumes & simulate a DJ mixer UI
 
 const volume1 = document.querySelector("#volume-1");
@@ -78,12 +68,17 @@ function playAllTracks() {
     if (index === 2) audio.volume = volume3.value;
     if (index === 3) audio.volume = volume4.value;
 
+    const audio = new Audio(trackPath);
+
+    audio.currentTime = Math.random() * 20;
+
     audio.play();
 
     layeredPlayers.push(audio);
   });
 
-  msg.textContent = "All tracks are playing together";
+  msg.textContent =
+    " ~:~ quadripital layers of P-hasing together; do you hear this cloud? ~:~ ";
 }
 
 // functions that wait for User control on each track's
@@ -105,8 +100,9 @@ volume4.addEventListener("input", function () {
   if (layeredPlayers[3]) layeredPlayers[3].volume = volume4.value;
 });
 
-// function to pause medias playing
-// informs User via text content 
+// function to pause blended tracks as an artistic
+// pause in the last play commands / session
+// informs User via text content
 
 function pauseTrack() {
   musicPlayer.pause();
@@ -115,12 +111,27 @@ function pauseTrack() {
     audio.pause();
   });
 
-  msg.textContent = "All Playback paused";
+  msg.textContent = " ~:~ P-hasing layers [PAUSED] ~:~ ";
 }
 
+// function to stop and refresh blended tracks as an artistic
+// stop in the last play commands / session
+// informs User via text content
+
+function stopTrack() {
+  musicPlayer.pause();
+  musicPlayer.currentTime = 0;
+
+  layeredPlayers.forEach(function (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+
+  msg.textContent = " ~:~ P-hasing layers [OFF] ~:~ ";
+}
 
 // the below was for for basic learning:
-//whilst it was good to know, and simple; 
+//whilst it was good to know, and simple;
 // I've chosen to have a container of
 // divisions with numbered track id's to speak
 // to JS
@@ -134,19 +145,17 @@ function pauseTrack() {
 // const playButton = document.querySelector("#play-button");
 // const pauseButton = document.querySelector("#pause-button");
 
-
 // // [command]Button.addEventListener("click", [command]);
-// // is the the control/connect of the button/function 
+// // is the the control/connect of the button/function
 // // in order for the User to control the media content function
 // // within browser interface: each arranged command listens for event/click
 // // to then connect each respective function.
 // playButton.addEventListener("click", playAudio);
 // pauseButton.addEventListener("click", pauseAudio);
 
-
-// each 
-// function [command]Audio (); 
-// [command].play(); 
+// each
+// function [command]Audio ();
+// [command].play();
 // msg.textContent = "text for User"
 // below is aforementioned function,
 //  alongside textContent to inform User on interface

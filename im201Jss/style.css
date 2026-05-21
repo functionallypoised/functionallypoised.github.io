@@ -1,7 +1,7 @@
 /*  for continuity, I appreciate the style I've maintained thus far */
 
 body {
-  margin-left: 30px;
+  margin-left: 0 px;
   background-color: rgb(156, 182, 206);
   color: rgb(20, 8, 100);
   font-family: "Montserrat", sans-serif;
@@ -9,11 +9,11 @@ body {
 
 h1 {
   text-align: right;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: 600;
 }
 
 h3,
@@ -22,11 +22,11 @@ h3,
 }
 
 h3 {
-  font-weight: 150;
+  font-weight: 140;
 }
 
 h4 {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 p,
@@ -64,7 +64,7 @@ video {
   width: 3840px;
   max-width: 100vw;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 18px;
   margin: 0 auto;
   border: 2px inset rgb(120, 191, 214);
 }
@@ -74,7 +74,7 @@ video {
 button {
   font-size: 1rem;
   border-radius: 6px;
-  padding: 4px 7px;
+  padding: 14px 18px;
   cursor: pointer;
   background-color: antiquewhite;
   color: rgb(20, 8, 100);
@@ -83,34 +83,34 @@ button {
 }
 
 button:hover {
-  scale: 0.9;
+  scale: 0.8;
 }
 
 /* media playlist UI style */
 
 .playlist-container {
-  margin-top: 40px;
+  margin-top: 48px;
 }
 
 .track {
   display: flex;
   align-items: center;
-  gap: 8 px;
+  gap: 18 px;
 
-  margin-bottom: 8 px;
-  padding: 4 px;
+  margin-bottom: 18 px;
+  padding: 14 px;
 
   border: 2px inset rgb(120, 191, 214);
 }
 
 .master-controls {
-  margin-top: 8 px;
+  margin-top: 18 px;
   display: flex;
   gap: 8 px;
 }
 
 .player-container {
-  margin-top: 40px;
+  margin-top: 48px;
     text-align: center;
 }
 
@@ -121,11 +121,11 @@ audio {
 }
 
 .mixer-container {
-  margin-top: 8 px;
+  margin-top: 18 px;
   text-align: center;
 }
 
 .mixer-container label {
   display: block;
-  margin: 8 px auto;
+  margin: 18 px auto;
 }

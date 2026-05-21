@@ -12,27 +12,49 @@
     <h1>P-HASE ARCHIVE</h1>
 
     <!-- a section of contained divisions of my tracks to 
-   form a playlist UI -->
+   form a playlist UI & respective play buttons -->
+
     <section class="playlist-container">
       <div class="track">
         <h3>Hes</h3>
-        <button onclick="loadTrack(1)">Play</button>
+        <button onclick="loadTrack(1)">~:~ >> ~:~</button>
       </div>
 
       <div class="track">
         <h3>Dry Down</h3>
-        <button onclick="loadTrack(2)">Play</button>
+        <button onclick="loadTrack(2)">~:~ >> ~:~</button>
       </div>
 
       <div class="track">
         <h3>Leapt</h3>
-        <button onclick="loadTrack(3)">Play</button>
+        <button onclick="loadTrack(3)">~:~ >> ~:~</button>
       </div>
 
       <div class="track">
         <h3>Water Feature</h3>
-        <button onclick="loadTrack(4)">Play</button>
+        <button onclick="loadTrack(4)">~:~ >> ~:~</button>
       </div>
+    </section>
+
+    <!-- My classed id tags of media, to connect 
+JS with the media divisions contained above -->
+
+    <section class="player-container">
+      <audio id="music-player" controls></audio>
+
+      <p id="msg">
+        .~:~ >> ~:~Select~:~ >> ~:~ singular P-hase layer~:~ >> ~:~.
+      </p>
+    </section>
+
+    <!-- button to play all tracks at once ( for avantGard fun )
+     button to pause last commands
+     button to stop and refresh -->
+
+    <section class="master-controls">
+      <button onclick="releasePhase()">~:~ P-hase release [ON] ~:~</button>
+      <button onclick="standbyPhase()">~:~ P-hase [STANDBY] ~:~</button>
+      <button onclick="resetPhase()">~:~ P-hase [OFF] ~:~</button>
     </section>
 
     <!-- i chose to add a section containing seperate Mixer Controls isolated 
@@ -40,7 +62,7 @@
   so it can function as a DJ simulator as well as an album archive-->
 
     <section class="mixer-container">
-      <h2>Layer Mixer</h2>
+      <h2>Lay down a mix; curate a P-hase cloud</h2>
 
       <label>
         Hes
@@ -91,21 +113,6 @@
       </label>
     </section>
 
-    <!-- My classed id tags of media, to connect 
-JS with the media divisions contained above -->
-
-    <section class="player-container">
-      <audio id="music-player" controls></audio>
-
-      <p id="msg">Select a track.</p>
-    </section>
-
-    <!-- button to play all tracks at once ( for avantGard fun ) -->
-
-    <section class="master-controls">
-      <button onclick="playAllTracks()">Play All</button>
-      <button onclick="pauseTrack()">Pause All</button>
-    </section>
     <!-- the video media content id tags to connect
   JS controls with the video media -->
 
