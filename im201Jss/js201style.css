@@ -1,4 +1,4 @@
-/*  for continuity, I appreciate the style I've maintained thus far */
+/*  built style off of Bad Artist Presents usual palette */
 
 body {
   margin-left: 0px;
@@ -110,6 +110,7 @@ section {
   background-color: rgba(64, 103, 116, 0.452);
 
   border: 2px solid rgb(128, 163, 165);
+  }
 
     /* slider track */
 
@@ -126,6 +127,9 @@ input[type="range"] {
   border: 1px solid rgb(225, 255, 208);
 
 }
+
+
+
 
   /* slider draggable handle */
 
@@ -152,7 +156,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     0 0 8px rgb(225, 255, 208);
 
 }
-}
+
 
 #msg {
 
