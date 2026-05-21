@@ -9,11 +9,11 @@ body {
 
 h1 {
   text-align: right;
-  font-weight: 800;
+  font-weight: 444;
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 222;
 }
 
 h3,
@@ -22,11 +22,11 @@ h3,
 }
 
 h3 {
-  font-weight: 140;
+  font-weight: 148;
 }
 
 h4 {
-  font-weight: 400;
+  font-weight: 124;
 }
 
 p,
