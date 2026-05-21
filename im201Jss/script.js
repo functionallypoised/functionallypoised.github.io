@@ -10,6 +10,14 @@ const msg = document.querySelector("#msg");
 const trackButtons = document.querySelectorAll(".track-button");
 const masterButtons = document.querySelectorAll(".master-button");
 
+// function to deactivate buttons to indicate media not playing
+
+function deactivateTrackButtons() {
+  trackButtons.forEach(function (button) {
+    button.classList.remove("active-button");
+  });
+}
+
 // functions to connect divisioned
 // track numbers to each variable of media content
 //when User selects a track[#] button, the function will
@@ -17,6 +25,7 @@ const masterButtons = document.querySelectorAll(".master-button");
 //  informs User which track id is playing via playlist UI
 
 function loadTrack(trackNumber) {
+  deactivateTrackButtons();
   if (trackNumber === 1) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3";
 
@@ -63,7 +72,7 @@ function loadTrack(trackNumber) {
 }
 
 // for User to select all [#] tracks at once {for avantGard fun}
-//  informs User of the blended tracks playing via playlist UI
+//  informs User of the blended tracks playing via UI
 
 const allTracks = [
   "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3",
@@ -72,9 +81,9 @@ const allTracks = [
   "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3",
 ];
 
-// to store the audio objects UI:, sliders for each track to
+// to store the audio objects UI:, UI sliders for each track to
 //  isolate
-//track volumes & simulate a synth re-sampling P-Hase album UI
+//track volumes & re-sample P-Hase album into itself
 
 const volume1 = document.querySelector("#volume-1");
 const volume2 = document.querySelector("#volume-2");
