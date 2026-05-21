@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>P-HASE ARCHIVE</title>
-<link rel="stylesheet" href="js201reset.css" />
-<link rel="stylesheet" href="js201style.css" />
-<script src="js201script.js" defer></script>
+    <link rel="stylesheet" href="js201reset.css" />
+    <link rel="stylesheet" href="js201style.css" />
+    <script src="js201script.js" defer></script>
   </head>
   <!-- My body indexing how the html will 
    portray this album-custom media page. -->
@@ -14,11 +14,10 @@
   <body>
     <h1>P-HASE ARCHIVE</h1>
 
-
     <!-- a section of contained divisions of my tracks to 
    form a playlist UI & respective play & track playback buttons -->
 
-   <!--Icons by NsuRaboElijah from Flaticon
+    <!--Icons by NsuRaboElijah from Flaticon
 https://www.flaticon.com/packs/music-18941370
 -->
 
@@ -27,44 +26,76 @@ https://www.flaticon.com/packs/music-18941370
         <h3>Hes</h3>
         <button class="track-button" onclick="loadTrack(1)">
           <img
-    src="mediaPlaycons/sound-bars.png"
-    alt="load track"
-    class="player-icon"
-  />
-</button>
+            src="mediaPlaycons/sound-bars.png"
+            alt="load track"
+            class="player-icon"
+          />
+        </button>
+        <input
+          id="load-volume-1"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
       </div>
 
       <div class="track">
         <h3>Dry Down</h3>
         <button class="track-button" onclick="loadTrack(2)">
           <img
-    src="mediaPlaycons/sound-bars.png"
-    alt="load track"
-    class="player-icon"
-  />
-</button>
+            src="mediaPlaycons/sound-bars.png"
+            alt="load track"
+            class="player-icon"
+          />
+        </button>
+        <input
+          id="load-volume-2"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
       </div>
 
       <div class="track">
         <h3>Leapt</h3>
         <button class="track-button" onclick="loadTrack(3)">
           <img
-    src="mediaPlaycons/sound-bars.png"
-    alt="load track"
-    class="player-icon"
-  />
-</button>
+            src="mediaPlaycons/sound-bars.png"
+            alt="load track"
+            class="player-icon"
+          />
+        </button>
+        <input
+          id="load-volume-3"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
       </div>
 
       <div class="track">
         <h3>Water Feature</h3>
         <button class="track-button" onclick="loadTrack(4)">
           <img
-    src="mediaPlaycons/sound-bars.png"
-    alt="load track"
-    class="player-icon"
-  />
-</button>
+            src="mediaPlaycons/sound-bars.png"
+            alt="load track"
+            class="player-icon"
+          />
+        </button>
+        <input
+          id="load-volume-4"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
       </div>
     </section>
 
@@ -72,51 +103,56 @@ https://www.flaticon.com/packs/music-18941370
 JS with the media divisions contained above -->
 
     <section class="player-container">
-<audio id="music-player"></audio>
+      <audio id="music-player"></audio>
 
-<section class="custom-player">
-  <button onclick="playCurrentTrack()">
-    <img
-    src="mediaPlaycons/play.png"
-    alt="play"
-    class="controls-icon"
-  />
-  </button>
-  <button onclick="pauseCurrentTrack()">
-    <img
-    src="mediaPlaycons/pause.png"
-    alt="pause"
-    class="controls-icon"
-  />
-  </button>
+      <section class="custom-player">
+        <button class="player-control-button" onclick="playCurrentTrack()">
+          <img src="mediaPlaycons/play.png" alt="play" class="controls-icon" />
+        </button>
 
-  <input id="track-progress" type="range" min="0" max="100" value="0" />
-  
-  <button onclick="loopCurrentTrack()">
-    <img
-    src="mediaPlaycons/synchronize.png"
-    alt="loop"
-    class="controls-icon"
-    />
-  </button>
+        <button class="player-control-button" onclick="pauseCurrentTrack()">
+          <img
+            src="mediaPlaycons/pause.png"
+            alt="pause"
+            class="controls-icon"
+          />
+        </button>
 
-  <label>
-    speed
-    <input id="speed-control" type="range" min="0.2" max="4" step="0.1" value="1" />
-  </label>
+        <input id="track-progress" type="range" min="0" max="100" value="0" />
 
-  <span id="speed-display">1x</span>
+        <button class="player-control-button" onclick="loopCurrentTrack()">
+          <img
+            src="mediaPlaycons/synchronize.png"
+            alt="loop"
+            class="controls-icon"
+          />
+        </button>
 
-    </section>
+        <label>
+          speed
 
+          <input
+            id="speed-control"
+            type="range"
+            min="0.2"
+            max="4"
+            step="0.1"
+            value="1"
+          />
+        </label>
+
+        <span id="speed-display">1x</span>
+      </section>
 
       <p id="msg">
         .~:~ >> ~:~Select~:~ >> ~:~ singular P-hase layer~:~ >> ~:~.
       </p>
+    </section>
 
     <!-- i chose to add a section containing seperate Mixer Controls isolated 
  to each track,
-  so it can function as a DJ simulator as well as an album archive-->
+  so it its audio playback owns modular function
+   as a DJ simulator; sound design;  as well as an album archive-->
 
     <section class="mixer-container">
       <h2>lay down & mix; curate a P-hase cloud</h2>
@@ -133,6 +169,15 @@ JS with the media divisions contained above -->
         />
       </label>
 
+      <input
+        id="release-volume-1"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+
       <label>
         Dry Down
         <input
@@ -144,6 +189,15 @@ JS with the media divisions contained above -->
           id="volume-2"
         />
       </label>
+
+      <input
+        id="release-volume-2"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
 
       <label>
         Leapt
@@ -157,6 +211,15 @@ JS with the media divisions contained above -->
         />
       </label>
 
+      <input
+        id="release-volume-3"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+
       <label>
         Water Feature
         <input
@@ -168,6 +231,15 @@ JS with the media divisions contained above -->
           id="volume-4"
         />
       </label>
+
+      <input
+        id="release-volume-4"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
     </section>
 
     <!-- section for master controls command all tracks at once ( for avantGard fun )
@@ -177,34 +249,34 @@ JS with the media divisions contained above -->
      [stop] to stop and refresh 
      buttons act as master tracking of blended media playback in time -->
 
-     <!--
+    <!--
 Icons by NsuRaboElijah from Flaticon
 https://www.flaticon.com/packs/music-18941370
 -->
 
     <section class="master-controls">
       <button class="master-button" onclick="release()">
-  <img
-    src="mediaPlaycons/equalizer-control.png"
-    alt="release"
-    class="controls-icon"
-  />
+        <img
+          src="mediaPlaycons/equalizer-control.png"
+          alt="release"
+          class="controls-icon"
+        />
       </button>
 
       <button class="master-button" onclick="standby()">
-    <img 
-    src="mediaPlaycons/vinyl-player.png"
-    alt="standby"
-    class="controls-icon"
-    />
+        <img
+          src="mediaPlaycons/vinyl-player.png"
+          alt="standby"
+          class="controls-icon"
+        />
       </button>
 
       <button class="master-button" onclick="reset()">
-    <img 
-    src="mediaPlaycons/synchronize.png"
-    alt="stop"
-    class="controls-icon"
-    />
+        <img
+          src="mediaPlaycons/synchronize.png"
+          alt="stop"
+          class="controls-icon"
+        />
       </button>
     </section>
 
@@ -219,22 +291,32 @@ https://www.flaticon.com/packs/music-18941370
       muted
     ></video>
 
-        <!-- ??explain who P-hase is , what the archive is, and how to use the page?? 
+    <!-- ??explain who P-hase is , what the archive is, and how to use the page?? 
      -->
 
     <div>This is an archive of creative commons album from P-hase,</div>
- <div>a music producer and sound designer based in Los Angeles.</div>
-  <div>    Inspired by the phases of precipitation,</div>
-    <div>the archive is designed to provide an interactive experience for users to explore </div>
-     <div>the rhytmic and artistic aspects of P-hase's music, via alternative engagements.</div>
-      <div>Users can interact with the playlist to select and play individual tracks,</div>
-     <div>  or click master controls to mix in blended layers of the album as whole.</div>
-           <div>The page features a selector of tracks,</div>
-      <div>a media player, master controls for playback,</div>
-      <div>and a mixer for adjusting track volumes.</div>
-         <div>  creative commons video art from miac</div>
-          <div>time difference mapped and recoloured</div>
-           <div>by NaJadA</div>
-           Bad Artist Presents interaction with music in modular, dynamic format.
+    <div>a music producer and sound designer based in Los Angeles.</div>
+    <div>Inspired by the phases of precipitation,</div>
+    <div>
+      the archive is designed to provide an interactive experience for users to
+      explore
+    </div>
+    <div>
+      the rhytmic and artistic aspects of P-hase's music, via alternative
+      engagements.
+    </div>
+    <div>
+      Users can interact with the playlist to select and play individual tracks,
+    </div>
+    <div>
+      or click master controls to mix in blended layers of the album as whole.
+    </div>
+    <div>The page features a selector of tracks,</div>
+    <div>a media player, master controls for playback,</div>
+    <div>and a mixer for adjusting track volumes.</div>
+    <div>creative commons video art from miac</div>
+    <div>time difference mapped and recoloured</div>
+    <div>by NaJadA</div>
+    Bad Artist Presents interaction with music in modular, dynamic format.
   </body>
 </html>

@@ -18,27 +18,47 @@ function deactivateTrackButtons() {
   });
 }
 
+// funct loadTrack volume inputs
+
+const loadVolume1 = document.querySelector("#load-volume-1");
+const loadVolume2 = document.querySelector("#load-volume-2");
+const loadVolume3 = document.querySelector("#load-volume-3");
+const loadVolume4 = document.querySelector("#load-volume-4");
+
 // functions to control media content from buttons,
 //  to then inform User of the track playing via text content
 
 const trackProgress = document.querySelector("#track-progress");
 const speedControl = document.querySelector("#speed-control");
 const speedDisplay = document.querySelector("#speed-display");
+const playerControlButtons = document.querySelectorAll(
+  ".player-control-button",
+);
 
 function playCurrentTrack() {
+  deactivatePlayerControlButtons();
+
   musicPlayer.play();
+
+  playerControlButtons[0].classList.add("active-button");
 }
 
 function pauseCurrentTrack() {
+  deactivatePlayerControlButtons();
+
   musicPlayer.pause();
+
+  playerControlButtons[1].classList.add("active-button");
 }
 
 function loopCurrentTrack() {
   musicPlayer.loop = !musicPlayer.loop;
 
   if (musicPlayer.loop) {
+    playerControlButtons[2].classList.add("active-button");
     msg.textContent = " ~:~ looping singular P-hase layer [ON] ~:~ ";
   } else {
+    playerControlButtons[2].classList.remove("active-button");
     msg.textContent = " ~:~ looping singular P-hase layer [OFF] ~:~ ";
   }
 }
@@ -66,6 +86,10 @@ function loadTrack(trackNumber) {
   deactivateTrackButtons();
   if (trackNumber === 1) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3";
+    loadVolume1.addEventListener("input", function () {
+      musicPlayer.volume = loadVolume1.value;
+    });
+    musicPlayer.volume = loadVolume1.value;
 
     trackButtons[0].classList.add("active-button");
 
@@ -77,6 +101,10 @@ function loadTrack(trackNumber) {
   } else if (trackNumber === 2) {
     musicPlayer.src =
       "A-V_media_RMIT-IntMed/2_p-hase_Dry-Down-feat-Ben-Snaath.mp3";
+    loadVolume2.addEventListener("input", function () {
+      musicPlayer.volume = loadVolume2.value;
+    });
+    musicPlayer.volume = loadVolume2.value;
 
     trackButtons[1].classList.add("active-button");
 
@@ -87,6 +115,10 @@ function loadTrack(trackNumber) {
     msg.textContent = " ~: Dry Down sound [ON] :~ ";
   } else if (trackNumber === 3) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/3_p-hase_Leapt.mp3";
+    loadVolume3.addEventListener("input", function () {
+      musicPlayer.volume = loadVolume3.value;
+    });
+    musicPlayer.volume = loadVolume3.value;
 
     trackButtons[2].classList.add("active-button");
 
@@ -96,6 +128,10 @@ function loadTrack(trackNumber) {
     msg.textContent = " ~: Leapt sound [ON] :~ ";
   } else if (trackNumber === 4) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3";
+    loadVolume4.addEventListener("input", function () {
+      musicPlayer.volume = loadVolume4.value;
+    });
+    musicPlayer.volume = loadVolume4.value;
 
     trackButtons[3].classList.add("active-button");
 
@@ -123,10 +159,10 @@ const allTracks = [
 //  isolate
 //track volumes & re-sample P-Hase album into itself
 
-const volume1 = document.querySelector("#volume-1");
-const volume2 = document.querySelector("#volume-2");
-const volume3 = document.querySelector("#volume-3");
-const volume4 = document.querySelector("#volume-4");
+const volume1 = document.querySelector("#release-volume-1");
+const volume2 = document.querySelector("#release-volume-2");
+const volume3 = document.querySelector("#release-volume-3");
+const volume4 = document.querySelector("#release-volume-4");
 
 // to store the audio objects of each track, to then control
 //  the blended tracks as a group, for {avantGard fun}
