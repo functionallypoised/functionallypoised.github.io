@@ -1,7 +1,7 @@
 /*  for continuity, I appreciate the style I've maintained thus far */
 
 body {
-  margin-left: 0 px;
+  margin-left: 0px;
   background-color: rgb(156, 182, 206);
   color: rgb(20, 8, 100);
   font-family: "Montserrat", sans-serif;
@@ -95,18 +95,18 @@ button:hover {
 .track {
   display: flex;
   align-items: center;
-  gap: 18 px;
+  gap: 18px;
 
-  margin-bottom: 18 px;
-  padding: 14 px;
+  margin-bottom: 18px;
+  padding: 14px;
 
   border: 2px inset rgb(120, 191, 214);
 }
 
 .master-controls {
-  margin-top: 18 px;
+  margin-top: 18px;
   display: flex;
-  gap: 18 px;
+  gap: 18px;
 }
 
 .player-container {
@@ -121,12 +121,12 @@ audio {
 }
 
 .mixer-container {
-  margin-top: 18 px;
+  margin-top: 18px;
   text-align: center;
-  margin-bottom: 18 px;
+  margin-bottom: 18px;
 }
 
 .mixer-container label {
   display: block;
-  margin: 18 px auto;
+  margin: 18px auto;
 }
