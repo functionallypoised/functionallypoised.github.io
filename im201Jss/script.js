@@ -135,30 +135,49 @@ function reset() {
 //   page, function listens to target of User move mouse
 
 const asciiPattern = [
-  "  ⊹ ⊹ ⊹   ⊹ ⊹    ⊹ ⊹ ⊹",
-  " ⊹      ⊹⊹    x  ⊹⊹     ⊹x",
-  "⊹x       ⊹ x      x  ⊹     x⊹",
-  "⊹      ⊹ x⊹    ⊹     ⊹     ⊹",
-  " ⊹  ⊹  ⊹   ⊹ x ⊹ x ⊹  x ⊹",
-  "    ꒦꒳꒦      ꒦꒳꒦    ꒦꒳꒦",
-  "    ⊹          ⊹       ⊹",
-  "      ⊹          ⊹    ⊹",
-  "        ⊹        ⊹        ⊹",
-  "      ⊹           ⊹      ⊹",
-  "   ⊹          ⊹         ⊹",
-  "     ⊹          ⊹         ⊹",
-  "    ⊹        ⊹       ⊹",
-  "      ⊹       ⊹      ⊹",
-  "       ⊹       ⊹        ⊹",
-  "         ⊹         ⊹",
-  "            ⊹         ⊹",
-  "                 ⊹",
-  "                  ⊹",
-  "              s̠҉͍͊ͅ   ",
+  "        ⊹             ⊹            ⊹",
+  "    ⊹        ⊹    ⊹      ⊹    ⊹         ⊹,",
+  " ⊹    ꒦       ⊹ ⊹          ⊹ ⊹            ⊹x,",
+  "⊹              x   ⊹       x           x⊹,",
+  "             x           x   ⊹               ⊹,",
+  " ⊹      ⊹      x          ⊹,",
+  "      ꒳        ⊹     ꒦                     ⊹",
+  " ⊹        ⊹      ⊹               ꒦",
+  "                        ⊹                  ⊹",
+  "    ⊹              ⊹                   ⊹",
+  "                s̠҉͍͊ͅ        ⊹",
+  "        ⊹                     ꒦     ⊹",
+  "          ⊹                      ⊹", 
+  "                     ꒦   ⊹",
+  "           ⊹",
+  "            ⊹    ⊹",
+  "      ꒳",
+  "             ⊹             ꒳",
+  "         ⊹",
+  "                         ⊹,",
+  "             ⊹",
+  "                   ꒦",
 ];
 
+let idleTimer;
+let lastMouseX = 0;
+let lastMouseY = 0;
+
 document.addEventListener("mousemove", function (event) {
-  createAsciiParticlePattern(event.clientX, event.clientY);
+
+  lastMouseX = event.clientX;
+  lastMouseY = event.clientY;
+
+  clearTimeout(idleTimer);
+
+  idleTimer = setTimeout(function () {
+
+idleInterval = setInterval(function () {
+
+  createAsciiParticlePattern(lastMouseX, lastMouseY);
+
+  }, 800);
+
 });
 
 function createAsciiParticlePattern(x, y) {
@@ -177,7 +196,7 @@ function createAsciiParticlePattern(x, y) {
 
         setTimeout(function () {
           particle.remove();
-        }, 2000);
+        }, 11000);
       }
     }
   });
