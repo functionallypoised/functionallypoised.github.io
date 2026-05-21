@@ -131,29 +131,56 @@ function reset() {
 
 // function connecting with style as
 // UX interaction;
-// particle effect melt elements to drip down
+// particle effect melt text input to drip down
 //   page, function listens to target of User move mouse
 
-const meltTargets = document.querySelectorAll(
-  ".track, button, .player-container, .mixer-container",
-);
+const asciiPattern = [
+  "  ⊹ ⊹ ⊹   ⊹ ⊹    ⊹ ⊹ ⊹",
+  " ⊹      ⊹⊹    x  ⊹⊹     ⊹x",
+  "⊹x       ⊹ x      x  ⊹     x⊹",
+  "⊹      ⊹ x⊹    ⊹     ⊹     ⊹",
+  " ⊹  ⊹  ⊹   ⊹ x ⊹ x ⊹  x ⊹",
+  "    ꒦꒳꒦      ꒦꒳꒦    ꒦꒳꒦",
+  "    ⊹          ⊹    ⊹ ⊹",
+  "    ⊹            ⊹    ⊹",
+  "      ⊹        ⊹        ⊹",
+  "     ⊹          ⊹       ⊹",
+  "    ⊹          ⊹         ⊹",
+  "꒦꒳꒦꒦꒳꒦꒦꒳꒦꒦꒳꒦꒦꒳꒦꒦꒳꒦꒦꒳꒦꒦꒳꒦",
+  "    ⊹          ⊹         ⊹",
+  "     ⊹        ⊹       ⊹",
+  "      ⊹      ⊹       ⊹",
+  "        ⊹  ⊹         ⊹",
+  "          ⊹           ⊹",
+  "            ⊹       ⊹",
+  "              ⊹   ⊹",
+  "                 ⊹",
+  "                  c͕͗ͤ̕̕l̙͖̑̾ͣo̯̱̊͊͢ư̡͕̭̇ḑ̴̞͛̒ p̞̈͑̚͞ḣ̖̻͛̓ā̤̓̍͘s̠҉͍͊ͅẹ̿͋̒̕s̠҉͍͊ͅ",
+];
 
-meltTargets.forEach(function (target) {
-  target.addEventListener("mousemove", createMeltParticle);
+document.addEventListener("mousemove", function (event) {
+  createAsciiParticlePattern(event.clientX, event.clientY);
 });
 
-function createMeltParticle(event) {
-  const particle = document.createElement("div");
-  particle.classList.add("melt-particle");
+function createAsciiParticlePattern(x, y) {
+  asciiPattern.forEach(function (row, rowIndex) {
+    for (let colIndex = 0; colIndex < row.length; colIndex++) {
+      if (row[colIndex] !== " ") {
+        const particle = document.createElement("div");
 
-  particle.style.left = event.clientX + Math.random() * 20 - 10 + "px";
-  particle.style.top = event.clientY + "px";
+        particle.classList.add("ascii-particle");
 
-  document.body.appendChild(particle);
+        particle.style.left = x + colIndex * 5 + "px";
+        particle.style.top = y + rowIndex * 5 + "px";
 
-  setTimeout(function () {
-    particle.remove();
-  }, 1200);
+        document.body.appendChild(particle);
+
+        setTimeout(function () {
+          particle.remove();
+        }, 2000);
+      }
+    }
+  });
 }
 
 // the below was for for basic learning:

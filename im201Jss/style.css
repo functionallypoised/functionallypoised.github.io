@@ -109,7 +109,7 @@ button:active {
 /* UX interaction; particle effect melt elements 
 to drip down the page as the mouse moves around & hovers */
 
-.melt-particle {
+.ascii-particle {
   position: fixed;
   width: 8px;
   height: 8px;
