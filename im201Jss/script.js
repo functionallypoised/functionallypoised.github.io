@@ -12,9 +12,9 @@ const masterButtons = document.querySelectorAll(".master-button");
 
 // functions to connect divisioned
 // track numbers to each variable of media content
-//when User selects a track number,
-// Js selects its respective media source,
-//  informs User which track id is playing from the playlist UI
+//when User selects a track[#] button, the function will
+//  load the respective media source,
+//  informs User which track id is playing via playlist UI
 
 function loadTrack(trackNumber) {
   if (trackNumber === 1) {
@@ -62,7 +62,8 @@ function loadTrack(trackNumber) {
   musicPlayer.play();
 }
 
-// for User to play all tracks at once (for avantGard fun )
+// for User to select all [#] tracks at once {for avantGard fun}
+//  informs User of the blended tracks playing via playlist UI
 
 const allTracks = [
   "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3",
@@ -73,13 +74,15 @@ const allTracks = [
 
 // to store the audio objects UI:, sliders for each track to
 //  isolate
-//track volumes & simulate a synth sampling P-Hase album UI
+//track volumes & simulate a synth re-sampling P-Hase album UI
 
 const volume1 = document.querySelector("#volume-1");
 const volume2 = document.querySelector("#volume-2");
 const volume3 = document.querySelector("#volume-3");
 const volume4 = document.querySelector("#volume-4");
 
+// to store the audio objects of each track, to then control
+//  the blended tracks as a group, for {avantGard fun}
 const layeredPlayers = [];
 
 function release() {
@@ -112,10 +115,10 @@ function release() {
   });
 
   msg.textContent =
-    " ~:~ >> ~:~quadripital layers of P-hasing [ON]; do you hear this cloud?~:~ >> ~:~ ";
+    " ~:~ >> ~:~quaDripital layers of P-hasing [ON]; do you hear this cloud?~:~ >> ~:~ ";
 }
 
-// functions that wait for User control on each track's
+// functions that wait for User command on each track's
 //  volume from the slider UI
 
 volume1.addEventListener("input", function () {
@@ -134,11 +137,28 @@ volume4.addEventListener("input", function () {
   if (layeredPlayers[3]) layeredPlayers[3].volume = volume4.value;
 });
 
-// function to pause blended tracks as an artistic
-// pause in the last play commands / session
+// function to deactivate buttons to indicate media not playing
+
+function deactivateAllButtons() {
+  trackButtons.forEach(function (button) {
+    button.classList.remove("active-button");
+  });
+
+  masterButtons.forEach(function (button) {
+    button.classList.remove("active-button");
+    button.classList.remove("standby-pulse");
+  });
+}
+
+// function to pause blended tracks
+//  in command / session
 // informs User via text content
 
 function standby() {
+  deactivateAllButtons();
+
+  masterButtons[1].classList.add("standby-pulse");
+
   musicPlayer.pause();
 
   layeredPlayers.forEach(function (audio) {
@@ -153,6 +173,10 @@ function standby() {
 // informs User via text content
 
 function reset() {
+  deactivateAllButtons();
+
+  masterButtons[1].classList.remove("standby-pulse");
+
   musicPlayer.pause();
   musicPlayer.currentTime = 0;
 
@@ -166,8 +190,9 @@ function reset() {
 
 // function connecting with style as
 // UX interaction;
-// particle effect melt text input to drip down
-//   page, function listens to target of User move mouse
+// particle effect blend text input
+// to drip downpage,
+// function listens to target of User move mouse
 
 const asciiPattern = [
   "        ⊹             ⊹            ⊹",
@@ -186,6 +211,8 @@ const asciiPattern = [
   "                     ꒦   ⊹",
   "           ⊹",
   "            ⊹    ⊹",
+  "              ⊹",
+  "                ⊹",
   "      ꒳",
   "             ⊹             ꒳",
   "         ⊹",
@@ -220,11 +247,12 @@ document.addEventListener("mousemove", function (event) {
     idleInterval = setInterval(function () {
       createAsciiParticlePattern(lastMouseX, lastMouseY);
     }, 800);
-  }, 1200);
+  }, 600);
 });
 
-// function pinting divisions of ascii characters as particles,
-//  to then drip down the page
+// function printing divisions of ascii font as particles,
+//  to then drip downpage
+
 function createAsciiParticlePattern(x, y) {
   asciiPattern.forEach(function (row, rowIndex) {
     for (let colIndex = 0; colIndex < row.length; colIndex++) {
@@ -235,13 +263,13 @@ function createAsciiParticlePattern(x, y) {
         particle.textContent = row[colIndex];
 
         particle.style.left = x + colIndex * 3 + "px";
-        particle.style.top = y + rowIndex * 11 + "px";
+        particle.style.top = y + rowIndex * 6 + "px";
 
         document.body.appendChild(particle);
 
         setTimeout(function () {
           particle.remove();
-        }, 11000);
+        }, 60000);
       }
     }
   });

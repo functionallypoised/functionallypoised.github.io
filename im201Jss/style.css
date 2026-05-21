@@ -25,14 +25,14 @@ h3 {
   font-weight: 148;
 }
 
+h4,
 p,
 div {
   color: rgb(20, 8, 100);
-  h4 {
+
       text-align: right;
       font-size: 11px;
   font-weight: 124;
-}
 }
 
 ul {
@@ -104,7 +104,7 @@ to drip down the page when idle mouse */
 .ascii-particle {
   position: fixed;
   font-size: 8px;
-  line-height: 8px;
+  line-height: 4px;
   color: rgb(225, 255, 208);
   pointer-events: none;
   z-index: 9999;
@@ -205,4 +205,25 @@ maintain scale down
   box-shadow:
     0 0 12px rgb(225, 255, 208);
 
+}
+
+.standby-pulse {
+  animation: standbyPulse 1s infinite;
+}
+
+@keyframes standbyPulse {
+  0% {
+    color: rgb(225, 255, 208);
+    opacity: 1;
+  }
+
+  50% {
+    color: rgb(20, 8, 100);
+    opacity: 0.4;
+  }
+
+  100% {
+    color: rgb(225, 255, 208);
+    opacity: 1;
+  }
 }
