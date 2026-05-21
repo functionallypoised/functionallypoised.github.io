@@ -99,7 +99,7 @@ button:active {
     color: rgb(225, 255, 208);
 }
 
-UX interaction; defrag rgb across page as mouse hovers over elements
+/* UX interaction; defrag rgb across page as mouse hovers over elements */
 
 .track:hover,
 button:hover,
