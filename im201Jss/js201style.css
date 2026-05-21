@@ -139,16 +139,13 @@ input[type="range"] {
 
   width: 140px;
 
-  height: 4px;
+  height: 8px;
 
   background: rgb(20, 8, 100);
 
   border: 1px solid rgb(166, 178, 187);
 
 }
-
-
-
 
   /* slider draggable handle */
 
@@ -159,11 +156,15 @@ input[type="range"]::-webkit-slider-thumb {
   width: 11px;
   height: 11px;
 
+  transform: rotate(45deg);
+
   background: rgb(166, 178, 187);
 
   border: 1px solid rgb(20, 8, 100);
 
-  cursor: pointer;
+  border-radius: 2px;
+
+cursor: crosshair;
 
 }
 
