@@ -269,7 +269,7 @@ function createAsciiParticlePattern(x, y) {
 
         setTimeout(function () {
           particle.remove();
-        }, 60000);
+        }, 18000);
       }
     }
   });
