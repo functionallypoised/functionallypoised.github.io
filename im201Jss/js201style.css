@@ -77,6 +77,8 @@ section {
   background-color: rgba(64, 103, 116, 0.452);
 
   border: 2px solid rgb(128, 163, 165);
+
+  
 }
 
 #track-progress {
@@ -91,6 +93,52 @@ section {
   width: 100px;
 }
 
+.custom-player {
+  width: 94%;
+
+  margin: 18px auto;
+
+  padding: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  background-color: rgba(64, 103, 116, 0.452);
+
+  border: 2px solid rgb(128, 163, 165);
+
+  /* slider draggable handle */
+
+input[type="range"]::-webkit-slider-thumb {
+
+  appearance: none;
+
+  width: 11px;
+  height: 11px;
+
+  background: rgb(225, 255, 208);
+
+  border: 1px solid rgb(20, 8, 100);
+
+  cursor: pointer;
+
+}
+
+/* hover glow */
+
+input[type="range"]::-webkit-slider-thumb:hover {
+
+  box-shadow:
+    0 0 8px rgb(225, 255, 208);
+
+}
+}
+
 #msg {
 
   margin-top: 8px;
@@ -100,6 +148,22 @@ section {
   color: rgb(225, 255, 208);
 
   font-size: 11px;
+
+  /* slider track */
+
+input[type="range"] {
+
+  appearance: none;
+
+  width: 140px;
+
+  height: 4px;
+
+  background: rgb(20, 8, 100);
+
+  border: 1px solid rgb(225, 255, 208);
+
+}
 
 }
 audio {
