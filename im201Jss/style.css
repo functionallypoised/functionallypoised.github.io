@@ -98,16 +98,8 @@ button:hover {
     color: rgb(225, 255, 208);
 }
 
-/* indicate selected buttons
-maintain scale down
- keeps to (225, 255, 208) text color until media has ran time */
-button:active {
-  scale: 0.8;
-    color: rgb(225, 255, 208);
-}
-
 /* UX interaction; particle effect simulate pattern 
-to drip down the page as the mouse moves around & hovers */
+to drip down the page when idle mouse */
 
 .ascii-particle {
   position: fixed;
@@ -132,6 +124,9 @@ to drip down the page as the mouse moves around & hovers */
     transform: translateY(120px);
   }
 }
+
+/* // A V media interaction; video hover effect that desaturates 
+original media */
 
 video:hover {
   animation: videoDefrag 0.88s infinite;
@@ -199,12 +194,14 @@ audio {
     color: rgb(225, 255, 208);
 }
 
+/* indicate selected buttons
+maintain scale down
+ keeps to  text color until media has ran time */
+
 .active-button {
 
   scale: 0.8;
-
   color: rgb(225, 255, 208);
-
   box-shadow:
     0 0 12px rgb(225, 255, 208);
 

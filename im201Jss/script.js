@@ -209,12 +209,6 @@ let lastMouseY = 0;
 // function to listen for User mouse movement, to then trigger
 //  the particle effect after a delay of print,
 
-let idleTimer;
-let idleInterval;
-
-let lastMouseX = 0;
-let lastMouseY = 0;
-
 document.addEventListener("mousemove", function (event) {
   lastMouseX = event.clientX;
   lastMouseY = event.clientY;
