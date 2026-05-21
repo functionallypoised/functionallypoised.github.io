@@ -7,55 +7,106 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
-<!-- My body indexing how the html will portray my media page. -->
-<body>
-  <h1>P-HASE ARCHIVE</h1>
+  <!-- My body indexing how the html will portray my media page. -->
+  <body>
+    <h1>P-HASE ARCHIVE</h1>
 
-  <!-- a section of contained divisions of my tracks to 
+    <!-- a section of contained divisions of my tracks to 
    form a playlist UI -->
-  <section class="playlist-container">
+    <section class="playlist-container">
+      <div class="track">
+        <h3>Hes</h3>
+        <button onclick="loadTrack(1)">Play</button>
+      </div>
 
-    <div class="track">
-      <h3>Hes</h3>
-      <button onclick="loadTrack(1)">Play</button>
-    </div>
+      <div class="track">
+        <h3>Dry Down</h3>
+        <button onclick="loadTrack(2)">Play</button>
+      </div>
 
-    <div class="track">
-      <h3>Dry Down</h3>
-      <button onclick="loadTrack(2)">Play</button>
-    </div>
+      <div class="track">
+        <h3>Leapt</h3>
+        <button onclick="loadTrack(3)">Play</button>
+      </div>
 
-    <div class="track">
-      <h3>Leapt</h3>
-      <button onclick="loadTrack(3)">Play</button>
-    </div>
+      <div class="track">
+        <h3>Water Feature</h3>
+        <button onclick="loadTrack(4)">Play</button>
+      </div>
+    </section>
 
-    <div class="track">
-      <h3>Water Feature</h3>
-      <button onclick="loadTrack(4)">Play</button>
-    </div>
+    <!-- i chose to add a section containing seperate Mixer Controls isolated 
+ to each track,
+  so it can function as a DJ simulator as well as an album archive-->
 
-  </section>
-<!-- My classed id tags of media, to connect 
+    <section class="mixer-container">
+      <h2>Layer Mixer</h2>
+
+      <label>
+        Hes
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          id="volume-1"
+        />
+      </label>
+
+      <label>
+        Dry Down
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          id="volume-2"
+        />
+      </label>
+
+      <label>
+        Leapt
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          id="volume-3"
+        />
+      </label>
+
+      <label>
+        Water Feature
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+          id="volume-4"
+        />
+      </label>
+    </section>
+
+    <!-- My classed id tags of media, to connect 
 JS with the media divisions contained above -->
 
-  <section class="player-container">
+    <section class="player-container">
+      <audio id="music-player" controls></audio>
 
-    <audio id="music-player" controls></audio>
+      <p id="msg">Select a track.</p>
+    </section>
 
-    <p id="msg">Select a track.</p>
+    <!-- button to play all tracks at once ( for avantGard fun ) -->
 
-  </section>
-
-  <!-- button to play all tracks at once ( for avantGard fun ) -->
-
-<section class="master-controls">
-
-  <button onclick="playAllTracks()">Play All</button>
-  <button onclick="pauseTrack()">Pause All</button>
-
-</section>
-  <!-- the video media content id tags to connect
+    <section class="master-controls">
+      <button onclick="playAllTracks()">Play All</button>
+      <button onclick="pauseTrack()">Pause All</button>
+    </section>
+    <!-- the video media content id tags to connect
   JS controls with the video media -->
 
     <video id="miac-video" src="Naja-edit_vid_miac.mp4" controls></video>

@@ -57,19 +57,53 @@ const allTracks = [
   "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3",
 ];
 
+// to store the audio objects for each track, sliders to isolate
+//track volumes & simulate a DJ mixer UI
+
+const volume1 = document.querySelector("#volume-1");
+const volume2 = document.querySelector("#volume-2");
+const volume3 = document.querySelector("#volume-3");
+const volume4 = document.querySelector("#volume-4");
+
 const layeredPlayers = [];
 
 function playAllTracks() {
   layeredPlayers.length = 0;
 
-  allTracks.forEach(function (trackPath) {
+  allTracks.forEach(function (trackPath, index) {
     const audio = new Audio(trackPath);
+
+    if (index === 0) audio.volume = volume1.value;
+    if (index === 1) audio.volume = volume2.value;
+    if (index === 2) audio.volume = volume3.value;
+    if (index === 3) audio.volume = volume4.value;
+
     audio.play();
+
     layeredPlayers.push(audio);
   });
 
   msg.textContent = "All tracks are playing together";
 }
+
+// functions that wait for User control on each track's
+//  volume from the slider UI
+
+volume1.addEventListener("input", function () {
+  if (layeredPlayers[0]) layeredPlayers[0].volume = volume1.value;
+});
+
+volume2.addEventListener("input", function () {
+  if (layeredPlayers[1]) layeredPlayers[1].volume = volume2.value;
+});
+
+volume3.addEventListener("input", function () {
+  if (layeredPlayers[2]) layeredPlayers[2].volume = volume3.value;
+});
+
+volume4.addEventListener("input", function () {
+  if (layeredPlayers[3]) layeredPlayers[3].volume = volume4.value;
+});
 
 // function to pause medias playing
 // informs User via text content 
