@@ -198,3 +198,14 @@ audio {
   margin: 18px auto;
     color: rgb(225, 255, 208);
 }
+
+.active-button {
+
+  scale: 0.8;
+
+  color: rgb(225, 255, 208);
+
+  box-shadow:
+    0 0 12px rgb(225, 255, 208);
+
+}

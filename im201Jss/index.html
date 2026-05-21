@@ -15,27 +15,27 @@
      -->
 
     <!-- a section of contained divisions of my tracks to 
-   form a playlist UI & respective play buttons -->
+   form a playlist UI & respective play & track playback buttons -->
 
     <section class="playlist-container">
       <div class="track">
         <h3>Hes</h3>
-        <button onclick="loadTrack(1)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(1)">~:~ >> ~:~</button>
       </div>
 
       <div class="track">
         <h3>Dry Down</h3>
-        <button onclick="loadTrack(2)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(2)">~:~ >> ~:~</button>
       </div>
 
       <div class="track">
         <h3>Leapt</h3>
-        <button onclick="loadTrack(3)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(3)">~:~ >> ~:~</button>
       </div>
 
       <div class="track">
         <h3>Water Feature</h3>
-        <button onclick="loadTrack(4)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(4)">~:~ >> ~:~</button>
       </div>
     </section>
 
@@ -52,12 +52,21 @@ JS with the media divisions contained above -->
 
     <!-- button to play all tracks at once ( for avantGard fun )
      button to pause last commands
-     button to stop and refresh -->
+     button to stop and refresh 
+     buttons act as master tracking of media playback in time -->
 
     <section class="master-controls">
-      <button onclick="release()">~:~ P-hase release [ON] ~:~</button>
-      <button onclick="standby()">~:~ P-hase [STANDBY] ~:~</button>
-      <button onclick="reset()">~:~ P-hase [OFF] ~:~</button>
+      <button class="master-button" onclick="release()">
+        ~:~ P-hase release [ON] ~:~
+      </button>
+
+      <button class="master-button" onclick="standby()">
+        ~:~ P-hase [STANDBY] ~:~
+      </button>
+
+      <button class="master-button" onclick="reset()">
+        ~:~ P-hase [OFF] ~:~
+      </button>
     </section>
 
     <!-- i chose to add a section containing seperate Mixer Controls isolated 
@@ -65,7 +74,7 @@ JS with the media divisions contained above -->
   so it can function as a DJ simulator as well as an album archive-->
 
     <section class="mixer-container">
-      <h2>Lay down a mix; curate a P-hase cloud</h2>
+      <h2>lay down a mix; curate a P-hase cloud</h2>
 
       <label>
         Hes

@@ -1,13 +1,14 @@
-// check J S link and is running
-console.log("JS IS RUNNING");
 // connect html element to divisioned id tag,
-//
 // for js to select as a constant variable
 // asks connection to load source {the media file},
-// & text indicate messages to User
+// links playback time tracking via buttons
+//  indicate messages to User
 
 const musicPlayer = document.querySelector("#music-player");
 const msg = document.querySelector("#msg");
+
+const trackButtons = document.querySelectorAll(".track-button");
+const masterButtons = document.querySelectorAll(".master-button");
 
 // functions to connect divisioned
 // track numbers to each variable of media content
@@ -19,18 +20,41 @@ function loadTrack(trackNumber) {
   if (trackNumber === 1) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3";
 
+    trackButtons[0].classList.add("active-button");
+
+    musicPlayer.onended = function () {
+      trackButtons[0].classList.remove("active-button");
+    };
+
     msg.textContent = " ~: Hes sound [ON] :~ ";
   } else if (trackNumber === 2) {
     musicPlayer.src =
       "A-V_media_RMIT-IntMed/2_p-hase_Dry-Down-feat-Ben-Snaath.mp3";
 
+    trackButtons[1].classList.add("active-button");
+
+    musicPlayer.onended = function () {
+      trackButtons[1].classList.remove("active-button");
+    };
+
     msg.textContent = " ~: Dry Down sound [ON] :~ ";
   } else if (trackNumber === 3) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/3_p-hase_Leapt.mp3";
 
+    trackButtons[2].classList.add("active-button");
+
+    musicPlayer.onended = function () {
+      trackButtons[2].classList.remove("active-button");
+    };
     msg.textContent = " ~: Leapt sound [ON] :~ ";
   } else if (trackNumber === 4) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3";
+
+    trackButtons[3].classList.add("active-button");
+
+    musicPlayer.onended = function () {
+      trackButtons[3].classList.remove("active-button");
+    };
 
     msg.textContent = " ~: Water Feature sound [ON] :~ ";
   }
@@ -59,6 +83,8 @@ const volume4 = document.querySelector("#volume-4");
 const layeredPlayers = [];
 
 function release() {
+  masterButtons[0].classList.add("active-button");
+
   layeredPlayers.length = 0;
 
   allTracks.forEach(function (trackPath, index) {
@@ -70,10 +96,19 @@ function release() {
     if (index === 3) audio.volume = volume4.value;
 
     audio.currentTime = Math.random() * 20;
-
     audio.play();
 
     layeredPlayers.push(audio);
+
+    audio.onended = function () {
+      const stillPlaying = layeredPlayers.some(function (player) {
+        return !player.paused && player.currentTime < player.duration;
+      });
+
+      if (!stillPlaying) {
+        masterButtons[0].classList.remove("active-button");
+      }
+    };
   });
 
   msg.textContent =
@@ -147,7 +182,7 @@ const asciiPattern = [
   "     ⊹              ⊹                  ⊹",
   "                s̠҉͍͊ͅ        ⊹",
   "        ⊹                     ꒦     ⊹",
-  "          ⊹                      ⊹", 
+  "          ⊹                      ⊹",
   "                     ꒦   ⊹",
   "           ⊹",
   "            ⊹    ⊹",
@@ -159,30 +194,43 @@ const asciiPattern = [
   "                   ꒦",
 ];
 
+// variables to control the timing of the particle effect
+//allow js to speak to time of mouse movement
+// to then trigger the particle effect after a delay of print
+// function to listen for User mouse movement, to then trigger
+//  the particle effect after a delay of print,
+
 let idleTimer;
+let idleInterval;
+
+let lastMouseX = 0;
+let lastMouseY = 0;
+
+// function to listen for User mouse movement, to then trigger
+//  the particle effect after a delay of print,
+
+let idleTimer;
+let idleInterval;
+
 let lastMouseX = 0;
 let lastMouseY = 0;
 
 document.addEventListener("mousemove", function (event) {
-
   lastMouseX = event.clientX;
   lastMouseY = event.clientY;
 
   clearTimeout(idleTimer);
-
-  idleTimer = setTimeout(function () {
-
-idleInterval = setInterval(function () {
-
-  createAsciiParticlePattern(lastMouseX, lastMouseY);
-
-  }, 800);
-
-  
   clearInterval(idleInterval);
 
+  idleTimer = setTimeout(function () {
+    idleInterval = setInterval(function () {
+      createAsciiParticlePattern(lastMouseX, lastMouseY);
+    }, 800);
+  }, 1200);
 });
 
+// function pinting divisions of ascii characters as particles,
+//  to then drip down the page
 function createAsciiParticlePattern(x, y) {
   asciiPattern.forEach(function (row, rowIndex) {
     for (let colIndex = 0; colIndex < row.length; colIndex++) {
@@ -192,8 +240,8 @@ function createAsciiParticlePattern(x, y) {
         particle.classList.add("ascii-particle");
         particle.textContent = row[colIndex];
 
-        particle.style.left = x + colIndex * 7 + "px";
-        particle.style.top = y + rowIndex * 10 + "px";
+        particle.style.left = x + colIndex * 3 + "px";
+        particle.style.top = y + rowIndex * 11 + "px";
 
         document.body.appendChild(particle);
 
