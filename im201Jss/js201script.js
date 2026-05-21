@@ -17,6 +17,11 @@ function deactivateTrackButtons() {
     button.classList.remove("active-button");
   });
 }
+function deactivatePlayerControlButtons() {
+  playerControlButtons.forEach(function (button) {
+    button.classList.remove("active-button");
+  });
+}
 
 // funct loadTrack volume inputs
 
