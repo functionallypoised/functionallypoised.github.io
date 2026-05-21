@@ -112,6 +112,25 @@ section {
   border: 2px solid rgb(128, 163, 165);
   }
 
+  
+/* // indicate msg to user to select track */
+#msg {
+
+  margin-top: 8px;
+
+  text-align: center;
+
+  color: rgb(225, 255, 208);
+
+  font-size: 11px;
+
+}
+
+/* // hide native audio controls, to use custom media player */
+audio {
+  display: none;
+}
+
     /* slider track */
 
 input[type="range"] {
@@ -124,7 +143,7 @@ input[type="range"] {
 
   background: rgb(20, 8, 100);
 
-  border: 1px solid rgb(225, 255, 208);
+  border: 1px solid rgb(166, 178, 187);
 
 }
 
@@ -140,7 +159,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 11px;
   height: 11px;
 
-  background: rgb(225, 255, 208);
+  background: rgb(166, 178, 187);
 
   border: 1px solid rgb(20, 8, 100);
 
@@ -157,22 +176,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 }
 
-
-#msg {
-
-  margin-top: 8px;
-
-  text-align: center;
-
-  color: rgb(225, 255, 208);
-
-  font-size: 11px;
-
-}
-
-audio {
-  display: none;
-}
+/* // video art display */
 
 video {
   display: block;
@@ -191,9 +195,9 @@ button {
   border-radius: 0px;
   padding: 2px;
   cursor: pointer;
-  background-color: rgba(102, 173, 173, 0.534);
+  background-color: rgba(122, 209, 209, 0.548);
   color: rgb(225, 255, 208);
-  border: 2px solid rgb(120, 191, 214);
+  border: 2px inset rgb(120, 191, 214);
   font-family: "Montserrat", sans-serif;
     transition: 0.2s;
 }
@@ -272,6 +276,9 @@ video:hover {
   border: 2px inset rgb(120, 191, 214);
 }
 
+/* style arrangement of master controls; icons; 
+its respective containers */
+
 .master-controls {
   margin-top: 18px;
   display: flex;
@@ -333,6 +340,10 @@ maintain scale down
     0 0 12px rgb(225, 255, 208);
 
 }
+
+/* indicate selected track in playlist
+maintain scale down
+ keeps to  text color until media has ran time */
 
 .standby-pulse {
   animation: standbyPulse 1s infinite;
