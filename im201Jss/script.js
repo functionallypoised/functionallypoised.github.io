@@ -47,8 +47,9 @@ const allTracks = [
   "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3",
 ];
 
-// to store the audio objects UI  for each track, sliders to isolate
-//track volumes & simulate a DJ mixer UI
+// to store the audio objects UI:, sliders for each track to
+//  isolate
+//track volumes & simulate a synth sampling P-Hase album UI
 
 const volume1 = document.querySelector("#volume-1");
 const volume2 = document.querySelector("#volume-2");
@@ -57,7 +58,7 @@ const volume4 = document.querySelector("#volume-4");
 
 const layeredPlayers = [];
 
-function playAllTracks() {
+function release() {
   layeredPlayers.length = 0;
 
   allTracks.forEach(function (trackPath, index) {
@@ -68,8 +69,6 @@ function playAllTracks() {
     if (index === 2) audio.volume = volume3.value;
     if (index === 3) audio.volume = volume4.value;
 
-    const audio = new Audio(trackPath);
-
     audio.currentTime = Math.random() * 20;
 
     audio.play();
@@ -78,7 +77,7 @@ function playAllTracks() {
   });
 
   msg.textContent =
-    " ~:~ quadripital layers of P-hasing together; do you hear this cloud? ~:~ ";
+    " ~:~ >> ~:~quadripital layers of P-hasing [ON]; do you hear this cloud?~:~ >> ~:~ ";
 }
 
 // functions that wait for User control on each track's
@@ -104,21 +103,21 @@ volume4.addEventListener("input", function () {
 // pause in the last play commands / session
 // informs User via text content
 
-function pauseTrack() {
+function standby() {
   musicPlayer.pause();
 
   layeredPlayers.forEach(function (audio) {
     audio.pause();
   });
 
-  msg.textContent = " ~:~ P-hasing layers [PAUSED] ~:~ ";
+  msg.textContent = " ~:~ P-hasing layers [STANDBY] ~:~ ";
 }
 
 // function to stop and refresh blended tracks as an artistic
 // stop in the last play commands / session
 // informs User via text content
 
-function stopTrack() {
+function reset() {
   musicPlayer.pause();
   musicPlayer.currentTime = 0;
 
@@ -127,7 +126,7 @@ function stopTrack() {
     audio.currentTime = 0;
   });
 
-  msg.textContent = " ~:~ P-hasing layers [OFF] ~:~ ";
+  msg.textContent = " ~:~ P-hasing layers [OFF] ~:~ !! reset !! ~:~ ";
 }
 
 // the below was for for basic learning:

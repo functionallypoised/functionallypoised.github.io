@@ -73,8 +73,8 @@ video {
 
 button {
   font-size: 1rem;
-  border-radius: 6px;
-  padding: 14px 18px;
+  border-radius: 28px;
+  padding: 4px 8px;
   cursor: pointer;
   background-color: antiquewhite;
   color: rgb(20, 8, 100);
@@ -106,7 +106,7 @@ button:hover {
 .master-controls {
   margin-top: 18 px;
   display: flex;
-  gap: 8 px;
+  gap: 18 px;
 }
 
 .player-container {
@@ -123,6 +123,7 @@ audio {
 .mixer-container {
   margin-top: 18 px;
   text-align: center;
+  margin-bottom: 18 px;
 }
 
 .mixer-container label {
