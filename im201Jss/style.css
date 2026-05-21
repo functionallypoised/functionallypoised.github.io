@@ -25,14 +25,12 @@ h3 {
   font-weight: 148;
 }
 
-h4 {
-  font-weight: 124;
-}
-
 p,
 div {
   color: rgb(20, 8, 100);
-  font-weight: 300;
+  h4 {
+  font-weight: 124;
+}
 }
 
 ul {
