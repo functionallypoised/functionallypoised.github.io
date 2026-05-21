@@ -73,13 +73,14 @@ video {
 
 button {
   font-size: 1rem;
-  border-radius: 8px;
-  padding: 14px 18px;
+  border-radius: 0px;
+  padding: 8px 14px;
   cursor: pointer;
   background-color: antiquewhite;
   color: rgb(20, 8, 100);
   border: 2px solid rgb(120, 191, 214);
   font-family: "Montserrat", sans-serif;
+    transition: 0.2s;
 }
 
 /* indicate User interactivity of buttons
@@ -95,7 +96,7 @@ button:hover {
 maintain scale down
  keeps to (225, 255, 208) text color until media has ran time */
 button:active {
-  scale: 0.94;
+  scale: 0.8;
     color: rgb(225, 255, 208);
 }
 
@@ -169,8 +170,18 @@ video:hover {
 
 .player-container {
   margin-top: 4px;
-    text-align: center;
-      color: rgb(225, 255, 208);
+  text-align: center;
+  color: rgb(20, 8, 100);
+  background-color: rgb(120, 191, 214);
+
+  border: 2px solid rgb(225, 255, 208);
+  padding: 18px;
+  width: 82%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow:
+    0 0 12px rgba(225, 255, 208, 0.3),
+    inset 0 0 8px rgb(120, 191, 214);
 }
 
 audio {
