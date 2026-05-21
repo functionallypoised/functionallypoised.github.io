@@ -117,8 +117,8 @@ to drip down the page as the mouse moves around & hovers */
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: pinlight;
-  animation: asciiDrip linear forwards;
+  mix-blend-mode: screen;
+  animation: asciiDrip horizontalDrift 0.88s forwards;
 }
 
 @keyframes asciiDrip {
