@@ -106,30 +106,30 @@ button:active {
     color: rgb(225, 255, 208);
 }
 
-/* UX interaction; particle effect melt elements 
+/* UX interaction; particle effect simulate pattern 
 to drip down the page as the mouse moves around & hovers */
 
 .ascii-particle {
   position: fixed;
-  width: 8px;
-  height: 18px;
-  background-color: rgb(35, 83, 216);
-  border-radius: 50%;
+  font-size: 8px;
+  line-height: 8px;
+  color: rgb(225, 255, 208);
   pointer-events: none;
   z-index: 9999;
+  opacity: 1;
   mix-blend-mode: screen;
-  animation: asciiDrip horizontalDrift 0.88s forwards;
+  animation: asciiDrip 2s linear forwards;
 }
 
 @keyframes asciiDrip {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(80px) scale(0.3);
+    transform: translateY(120px);
   }
 }
 

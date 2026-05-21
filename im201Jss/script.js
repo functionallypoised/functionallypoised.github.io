@@ -169,15 +169,16 @@ function createAsciiParticlePattern(x, y) {
         const particle = document.createElement("div");
 
         particle.classList.add("ascii-particle");
+        particle.textContent = row[colIndex];
 
-        particle.style.left = x + colIndex * 8 + "px";
-        particle.style.top = y + rowIndex * 4 + "px";
+        particle.style.left = x + colIndex * 7 + "px";
+        particle.style.top = y + rowIndex * 10 + "px";
 
         document.body.appendChild(particle);
 
         setTimeout(function () {
           particle.remove();
-        }, 4000);
+        }, 2000);
       }
     }
   });
