@@ -153,8 +153,8 @@ input[type="range"]::-webkit-slider-thumb {
 
   appearance: none;
 
-  width: 11px;
-  height: 11px;
+  width: 14px;
+  height: 14px;
 
   transform: rotate(45deg);
 
@@ -172,7 +172,7 @@ cursor: crosshair;
 input[type="range"]::-webkit-slider-thumb:hover {
 
   box-shadow:
-    0 0 14px rgb(225, 255, 208);
+    0 0 22px rgb(225, 255, 208);
 
 }
 
@@ -195,7 +195,7 @@ button {
   border-radius: 0px;
   padding: 2px;
   cursor: pointer;
-  background-color: rgba(20, 8, 100, 0.548);
+  background-color: rgba(53, 132, 156, 0.548);
   color: rgb(225, 255, 208);
   border: 2px inset rgb(120, 191, 214);
   font-family: "Montserrat", sans-serif;
