@@ -158,12 +158,11 @@ input[type="range"]::-webkit-slider-thumb {
 
   transform: rotate(45deg);
 
-  background: rgb(166, 178, 187);
+  background:  rgb(225, 255, 208);
 
   border: 1px solid rgb(20, 8, 100);
 
-  border-radius: 2px;
-
+border-radius: 2px;
 cursor: crosshair;
 
 }
@@ -173,7 +172,7 @@ cursor: crosshair;
 input[type="range"]::-webkit-slider-thumb:hover {
 
   box-shadow:
-    0 0 8px rgb(225, 255, 208);
+    0 0 14px rgb(225, 255, 208);
 
 }
 
