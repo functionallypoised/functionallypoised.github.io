@@ -116,14 +116,14 @@ to drip down the page as the mouse moves around & hovers */
   color: rgb(225, 255, 208);
   pointer-events: none;
   z-index: 9999;
-  opacity: 1;
+  opacity: 0.8;
   mix-blend-mode: screen;
   animation: asciiDrip 2s linear forwards;
 }
 
 @keyframes asciiDrip {
   0% {
-    opacity: 1;
+    opacity: 0.8;
     transform: translateY(0);
   }
 
