@@ -84,6 +84,7 @@ button {
 
 button:hover {
   scale: 0.8;
+    color: rgb(225, 255, 208);
 }
 
 /* media playlist UI style */
@@ -112,6 +113,7 @@ button:hover {
 .player-container {
   margin-top: 48px;
     text-align: center;
+      color: rgb(225, 255, 208);
 }
 
 audio {
@@ -124,9 +126,11 @@ audio {
   margin-top: 18px;
   text-align: center;
   margin-bottom: 18px;
+    color: rgb(225, 255, 208);
 }
 
 .mixer-container label {
   display: block;
   margin: 18px auto;
+    color: rgb(225, 255, 208);
 }
