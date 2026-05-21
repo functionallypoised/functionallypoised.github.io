@@ -112,6 +112,22 @@ section {
 
   border: 2px solid rgb(128, 163, 165);
 
+    /* slider track */
+
+input[type="range"] {
+
+  appearance: none;
+
+  width: 140px;
+
+  height: 4px;
+
+  background: rgb(20, 8, 100);
+
+  border: 1px solid rgb(225, 255, 208);
+
+}
+
   /* slider draggable handle */
 
 input[type="range"]::-webkit-slider-thumb {
@@ -149,23 +165,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
   font-size: 11px;
 
-  /* slider track */
-
-input[type="range"] {
-
-  appearance: none;
-
-  width: 140px;
-
-  height: 4px;
-
-  background: rgb(20, 8, 100);
-
-  border: 1px solid rgb(225, 255, 208);
-
 }
 
-}
 audio {
   display: none;
 }
