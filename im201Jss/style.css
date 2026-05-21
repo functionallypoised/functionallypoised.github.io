@@ -117,7 +117,7 @@ to drip down the page as the mouse moves around & hovers */
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  animation: dripDown 0.01s linear absolute;
+  animation: dripDown 0.01s linear spread-out;
 }
 
 @keyframes dripDown {
