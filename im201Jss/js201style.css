@@ -25,6 +25,11 @@ h3 {
   font-weight: 148;
 }
 
+p {
+    font-weight: 111;
+          font-size: 22px;
+}
+
 h4,
 p,
 div {
@@ -55,7 +60,7 @@ section {
 /* A V media displays */
 
 .custom-player {
-  width: 82%;
+  width: 94%;
 
   margin: 18px auto;
 
@@ -69,19 +74,19 @@ section {
 
   gap: 10px;
 
-  background-color: rgb(120, 191, 214);
+  background-color: rgb(64, 103, 116);
 
-  border: 2px solid rgb(20, 8, 100);
+  border: 2px solid rgb(128, 163, 165);
 
-  border-radius: 4px;
-}
-
-.custom-player button {
   border-radius: 2px;
 }
 
 #track-progress {
-  width: 40%;
+  width: 100%;
+}
+
+.custom-player button {
+  border-radius: 2px;
 }
 
 #speed-control {
@@ -107,7 +112,7 @@ video {
 button {
   font-size: 1rem;
   border-radius: 0px;
-  padding: 8px 14px;
+  padding: 8px;
   cursor: pointer;
   background-color: antiquewhite;
   color: rgb(20, 8, 100);
@@ -204,8 +209,8 @@ video:hover {
 
 .player-icon {
 
-  width: 18px;
-  height: 18px;
+  width: 11px;
+  height: 11px;
 
   object-fit: contain;
 
