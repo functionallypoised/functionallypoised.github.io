@@ -156,7 +156,7 @@ video:hover {
 .track {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   margin-bottom: 4px;
   padding: 8px;
 
@@ -171,7 +171,7 @@ video:hover {
 }
 
 .player-container {
-  margin-top: 18px;
+  margin-top: 14px;
   text-align: center;
 }
 
@@ -182,7 +182,7 @@ audio {
 }
 
 .mixer-container {
-  margin-top: 18px;
+  margin-top: 8px;
   text-align: center;
   margin-bottom: 18px;
     color: rgb(225, 255, 208);
@@ -190,7 +190,7 @@ audio {
 
 .mixer-container label {
   display: block;
-  margin: 18px auto;
+  margin: 11px auto;
     color: rgb(225, 255, 208);
 }
 
