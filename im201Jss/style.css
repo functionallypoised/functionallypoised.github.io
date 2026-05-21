@@ -54,15 +54,42 @@ section {
 
 /* A V media displays */
 
+.custom-player {
+  width: 82%;
+
+  margin: 18px auto;
+
+  padding: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  background-color: rgb(120, 191, 214);
+
+  border: 2px solid rgb(20, 8, 100);
+
+  border-radius: 4px;
+}
+
+.custom-player button {
+  border-radius: 2px;
+}
+
+#track-progress {
+  width: 40%;
+}
+
+#speed-control {
+  width: 100px;
+}
+
 audio {
-  width: 80%;
-
-  filter:
-    hue-rotate(70deg)
-    saturate(0.6)
-    brightness(0.8);
-
-  border-radius: 0px;
+  display: none;
 }
 
 video {
@@ -175,10 +202,28 @@ video:hover {
   text-align: center;
 }
 
-audio {
-  width: 80%;
-  display: block;
-  margin: 0 auto;
+.player-icon {
+
+  width: 18px;
+  height: 18px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+
+  filter: brightness(0.9);
+
+}
+
+.controls-icon {
+
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+
 }
 
 .mixer-container {

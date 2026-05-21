@@ -15,25 +15,53 @@
     <!-- a section of contained divisions of my tracks to 
    form a playlist UI & respective play & track playback buttons -->
 
+   <!--Icons by NsuRaboElijah from Flaticon
+https://www.flaticon.com/packs/music-18941370
+-->
+
     <section class="playlist-container">
       <div class="track">
         <h3>Hes</h3>
-        <button class="track-button" onclick="loadTrack(1)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(1)">
+          <img
+    src="mediaPlaycons/sound-bars.png"
+    alt="load track"
+    class="player-icon"
+  />
+</button>
       </div>
 
       <div class="track">
         <h3>Dry Down</h3>
-        <button class="track-button" onclick="loadTrack(2)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(2)">
+          <img
+    src="mediaPlaycons/sound-bars.png"
+    alt="load track"
+    class="player-icon"
+  />
+</button>
       </div>
 
       <div class="track">
         <h3>Leapt</h3>
-        <button class="track-button" onclick="loadTrack(3)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(3)">
+          <img
+    src="mediaPlaycons/sound-bars.png"
+    alt="load track"
+    class="player-icon"
+  />
+</button>
       </div>
 
       <div class="track">
         <h3>Water Feature</h3>
-        <button class="track-button" onclick="loadTrack(4)">~:~ >> ~:~</button>
+        <button class="track-button" onclick="loadTrack(4)">
+          <img
+    src="mediaPlaycons/sound-bars.png"
+    alt="load track"
+    class="player-icon"
+  />
+</button>
       </div>
     </section>
 
@@ -41,7 +69,36 @@
 JS with the media divisions contained above -->
 
     <section class="player-container">
-      <audio id="music-player" controls></audio>
+<audio id="music-player"></audio>
+
+<section class="custom-player">
+  <button onclick="playCurrentTrack()">
+    <img
+    src="mediaPlaycons/play-button.png"
+    alt="play"
+    class="controls-icon"
+  </button>
+  <button onclick="pauseCurrentTrack()">
+    <img
+    src="mediaPlaycons/pause.png"
+    alt="pause"
+    class="controls-icon"
+  </button>
+  <button onclick="restartCurrentTrack()">
+    <img
+    src="mediaPlaycons/restart.png"
+    alt="restart"
+    class="controls-icon"
+  </button>
+
+  <input id="track-progress" type="range" min="0" max="100" value="0" />
+
+  <label>
+    speed
+    <input id="speed-control" type="range" min="0.2" max="4" step="0.1" value="1" />
+  </label>
+
+  <span id="speed-display">1x</span>
 
       <p id="msg">
         .~:~ >> ~:~Select~:~ >> ~:~ singular P-hase layer~:~ >> ~:~.
@@ -113,17 +170,35 @@ JS with the media divisions contained above -->
      [stop] to stop and refresh 
      buttons act as master tracking of blended media playback in time -->
 
+     <!--
+Icons by NsuRaboElijah from Flaticon
+https://www.flaticon.com/packs/music-18941370
+-->
+
     <section class="master-controls">
       <button class="master-button" onclick="release()">
-        ~:~ P-hase release [ON] ~:~
+  <img
+    src="mediaPlaycons/equalizer-control.png"
+    alt="release"
+    class="controls-icon"
+  />
+
       </button>
 
       <button class="master-button" onclick="standby()">
-        ~:~ P-hase [STANDBY] ~:~
+    <img 
+    src="mediaPlaycons/vinyl-player.png"
+    alt="standby"
+    class="controls-icon"
+    />
       </button>
 
       <button class="master-button" onclick="reset()">
-        ~:~ P-hase [OFF] ~:~
+    <img 
+    src="mediaPlaycons/synchronize.png"
+    alt="stop"
+    class="controls-icon"
+    />
       </button>
     </section>
 

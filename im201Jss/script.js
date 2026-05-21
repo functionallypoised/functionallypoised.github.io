@@ -18,6 +18,39 @@ function deactivateTrackButtons() {
   });
 }
 
+// functions to control media content from buttons,
+//  to then inform User of the track playing via text content
+
+const trackProgress = document.querySelector("#track-progress");
+const speedControl = document.querySelector("#speed-control");
+const speedDisplay = document.querySelector("#speed-display");
+
+function playCurrentTrack() {
+  musicPlayer.play();
+}
+
+function pauseCurrentTrack() {
+  musicPlayer.pause();
+}
+
+function restartCurrentTrack() {
+  musicPlayer.currentTime = 0;
+  musicPlayer.play();
+}
+
+musicPlayer.addEventListener("timeupdate", function () {
+  trackProgress.value = (musicPlayer.currentTime / musicPlayer.duration) * 100;
+});
+
+trackProgress.addEventListener("input", function () {
+  musicPlayer.currentTime = (trackProgress.value / 100) * musicPlayer.duration;
+});
+
+speedControl.addEventListener("input", function () {
+  musicPlayer.playbackRate = speedControl.value;
+  speedDisplay.textContent = speedControl.value + "x";
+});
+
 // functions to connect divisioned
 // track numbers to each variable of media content
 //when User selects a track[#] button, the function will
