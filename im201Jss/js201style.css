@@ -77,8 +77,6 @@ section {
   background-color: rgb(64, 103, 116);
 
   border: 2px solid rgb(128, 163, 165);
-
-  border-radius: 2px;
 }
 
 #track-progress {
@@ -112,10 +110,10 @@ video {
 button {
   font-size: 1rem;
   border-radius: 0px;
-  padding: 8px;
+  padding: 2px;
   cursor: pointer;
-  background-color: antiquewhite;
-  color: rgb(20, 8, 100);
+  background-color: rgba(102, 173, 173, 0.534);
+  color: rgb(225, 255, 208);
   border: 2px solid rgb(120, 191, 214);
   font-family: "Montserrat", sans-serif;
     transition: 0.2s;
