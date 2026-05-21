@@ -99,39 +99,29 @@ button:active {
     color: rgb(225, 255, 208);
 }
 
-/* UX interaction; defrag rgb across page as mouse hovers over elements */
+/* UX interaction; particle effect melt elements 
+to drip down the page as the mouse moves around & hovers */
 
-.track:hover,
-button:hover,
-.player-container:hover {
-  animation: rgbDefrag 0.35s infinite;
-  filter: contrast(130%) saturate(150%);
+.melt-particle {
+  position: fixed;
+  width: 4px;
+  height: 8px;
+  background-color: rgb(225, 255, 208);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: dripDown 1.2s linear forwards;
 }
 
-@keyframes rgbDefrag {
+@keyframes dripDown {
   0% {
-    transform: translate(0, 0);
-    text-shadow: 2px 0 red, -2px 0 cyan;
-  }
-
-  25% {
-    transform: translate(2px, -1px);
-    text-shadow: -2px 0 red, 2px 0 blue;
-  }
-
-  50% {
-    transform: translate(-2px, 1px);
-    text-shadow: 3px 0 lime, -3px 0 magenta;
-  }
-
-  75% {
-    transform: translate(1px, 2px);
-    text-shadow: -1px 0 cyan, 1px 0 red;
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 
   100% {
-    transform: translate(0, 0);
-    text-shadow: 2px 0 red, -2px 0 cyan;
+    opacity: 0;
+    transform: translateY(80px) scale(0.3);
   }
 }
 

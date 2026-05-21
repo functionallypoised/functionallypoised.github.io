@@ -129,6 +129,33 @@ function reset() {
   msg.textContent = " ~:~ P-hasing layers [OFF] ~:~ !! reset !! ~:~ ";
 }
 
+// function connecting with style as
+// UX interaction;
+// particle effect melt elements to drip down
+//   page, function listens to target of User move mouse
+
+const meltTargets = document.querySelectorAll(
+  ".track, button, .player-container, .mixer-container",
+);
+
+meltTargets.forEach(function (target) {
+  target.addEventListener("mousemove", createMeltParticle);
+});
+
+function createMeltParticle(event) {
+  const particle = document.createElement("div");
+  particle.classList.add("melt-particle");
+
+  particle.style.left = event.clientX + Math.random() * 20 - 10 + "px";
+  particle.style.top = event.clientY + "px";
+
+  document.body.appendChild(particle);
+
+  setTimeout(function () {
+    particle.remove();
+  }, 1200);
+}
+
 // the below was for for basic learning:
 //whilst it was good to know, and simple;
 // I've chosen to have a container of
