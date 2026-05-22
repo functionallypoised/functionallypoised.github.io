@@ -30,7 +30,15 @@ const delay1 = document.querySelector("#delay-1");
 const delay2 = document.querySelector("#delay-2");
 const delay3 = document.querySelector("#delay-3");
 const delay4 = document.querySelector("#delay-4");
-
+/////////////                           /////////////
+//        //                            //        //
+//        //        ///   ///   //>      //        //
+//        //        ///   ///   ///>      //        //
+//        //                             //        //
+//        //        ///   ///   ///>    //        //
+//////    //////    ///   ///   ///>    //////    //////
+/////       /////                        /////       /////
+///         ///                          ///         ///
 const loadDelays = [0, 0, 0, 0];
 const releaseDelays = [0, 0, 0, 0];
 
@@ -71,6 +79,13 @@ const speedDisplay = document.querySelector("#speed-display");
 const playerControlButtons = document.querySelectorAll(
   ".player-control-button",
 );
+
+//  ¬--------------------------------------------------
+//  |                                                 |
+//  |                                                 |
+//  |      []  [] '''''''''''''''' [] '''''''' x1     |
+//  |                                                 |
+//  ¬--------------------------------------------------
 
 function playCurrentTrack() {
   deactivatePlayerControlButtons();
@@ -116,7 +131,15 @@ speedControl.addEventListener("input", function () {
   musicPlayer.playbackRate = speedControl.value;
   speedDisplay.textContent = speedControl.value + "x";
 });
-
+/////////////                           /////////////
+//        //                            //        //
+//        //     ~~~///~~~///~~//>      //        //
+//        //     ~~~///~~~///~~~//>     //        //
+//        //   ~~~///~~~~~~///~~~//>    //        //
+//        //     ~~~///~~~~///~~~//>    //        //
+//////    //////    ~~~///~~~///~~//>    //////    //////
+/////       /////                        /////       /////
+///         ///                          ///         ///
 let echoPlayers = [];
 //
 // //
@@ -130,6 +153,11 @@ let echoPlayers = [];
 ///////// so now Im going to try a gated control--if the gatedecho is not commed out
 ///////////that will be yay
 
+// User hear echo in first 5 seconds
+// in this attention economy,
+// i want the delay echo attack quick,
+// vast sporadic and endless drifting release
+
 function createGatedEcho(trackPath, delaySeconds, volumeAmount) {
   const echoAudio = new Audio(trackPath);
 
@@ -137,7 +165,9 @@ function createGatedEcho(trackPath, delaySeconds, volumeAmount) {
 
   echoAudio.addEventListener("loadedmetadata", function () {
     const randomStart = Math.random() * echoAudio.duration;
-    const randomLength = Math.random() * 3 + 1;
+
+    // echo attack: 0–5 seconds
+    const quickAttack = Math.random() * 5000;
 
     echoAudio.currentTime = randomStart;
 
@@ -145,10 +175,13 @@ function createGatedEcho(trackPath, delaySeconds, volumeAmount) {
       echoAudio.play();
       echoPlayers.push(echoAudio);
 
-      setTimeout(function () {
-        echoAudio.pause();
-      }, randomLength * 1000);
-    }, delaySeconds * 1000);
+      // endless drifting volume
+      setInterval(function () {
+        const drift = 0.85 + Math.random() * 0.3;
+
+        echoAudio.volume = Math.max(0.05, Math.min(volumeAmount, drift));
+      }, 1200);
+    }, quickAttack);
   });
 }
 
@@ -181,6 +214,15 @@ function createGatedEcho(trackPath, delaySeconds, volumeAmount) {
 //   }, delaySeconds * 1000);
 // }
 
+/////////////
+//        //
+//        //
+//        //
+//        //
+//        //
+//////    //////         ///      ///      //
+/////       /////
+///         ///
 // functions to connect divisioned
 // track numbers to each variable of media content
 //when User selects a track[#] button, the function will
@@ -239,8 +281,10 @@ function loadTrack(trackNumber) {
   const delayTime = loadDelays[trackNumber - 1] * 1000;
 
   // createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
-  createGatedEcho(musicPlayer.src, loadDelays[trackNumber - 1], 0.8);
+  // quick ghost echoes
+  createGatedEcho(musicPlayer.src, 1);
 
+  // delayed actual playback
   setTimeout(function () {
     musicPlayer.play();
   }, delayTime);
@@ -298,6 +342,15 @@ const volume4 = document.querySelector("#release-volume-4");
 //  the blended tracks as a group, for {avantGard fun}
 const layeredPlayers = [];
 
+/////////////
+//        //
+//        //     ~~~///~~~~~~///~~~~~//>
+//        //     ~~~///~~~~~~///~~~~~//>
+//        //   ~~~///~~~~~~///~~~~~//>
+//        //      ~~~///~~~~~~///~~~~~//>
+//////    //////      ~~~///~~~~~~///~~~~~//>
+/////       /////
+///         ///
 function release() {
   masterButtons[0].classList.add("active-button");
 
@@ -313,13 +366,22 @@ function release() {
 
     audio.currentTime = Math.random() * 20;
 
-    // createReleaseEcho(audio, releaseDelays[index]);
-    createGatedEcho(trackPath, releaseDelays[index], audio.volume * 0.6);
     const delayTime = releaseDelays[index] * 1000;
 
+    // fast sporadic cloud echoes
+    createGatedEcho(trackPath, audio.volume * 0.8);
+
+    // delayed original cloud playback
     setTimeout(function () {
       audio.play();
     }, delayTime);
+    // createReleaseEcho(audio, releaseDelays[index]);
+    // createGatedEcho(trackPath, releaseDelays[index] + 1, audio.volume * 0.8);
+    // const delayTime = releaseDelays[index] * 1000;
+
+    // setTimeout(function () {
+    //   audio.play();
+    // }, delayTime);
 
     layeredPlayers.push(audio);
 
@@ -358,6 +420,12 @@ volume4.addEventListener("input", function () {
 });
 
 //deactivate buttons to indicate media not playing
+//       //      //       //      //       //
+//////////       //////////       //////////
+//      //       //      //       //      //
+//      //       //      //       //      //
+//////////       //////////       //////////
+//      //       //      //       //      //
 
 function deactivateAllButtons() {
   trackButtons.forEach(function (button) {
@@ -377,6 +445,12 @@ function deactivateAllButtons() {
 // function to pause blended tracks
 //  in command / session
 // informs User via text content
+//       //      //       //      //       //
+//////////       //////////       //////////
+//      //       //      //       //      //
+//      //       //      //       //      //
+//////////       //////////       //////////
+//      //       //      //       //      //
 
 function standby() {
   deactivateAllButtons();
@@ -392,17 +466,28 @@ function standby() {
 
 // function to stop and refresh blended tracks
 // informs User via text content
-
+//       //      //       //      //       //
+//////////       //////////       //////////
+//      //       //      //       //      //
+//      //       //      //       //      //
+//////////       //////////       //////////
+//      //       //      //       //      //
 function reset() {
   deactivateAllButtons();
-  masterButtons[1].classList.add("active-button");
+  masterButtons[2].classList.add("active-button");
 
   layeredPlayers.forEach(function (audio) {
     audio.pause();
     audio.currentTime = 0;
   });
 
-  msg.textContent = " ~:~ P-hasing layers [OFF] ~:~ !! reset !! ~:~ ";
+  echoPlayers.forEach(function (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+
+  echoPlayers.length = 0;
+  msg.textContent = " ~:~ all P-hasing [OFF] ~:~ !! reset !! ~:~ ";
 }
 
 // function connecting with style as
