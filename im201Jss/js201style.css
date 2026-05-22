@@ -248,7 +248,7 @@ video:hover {
 
 .track {
   display: flex;
-  align-items: center;
+  align-items: right;
   gap: 8px;
   margin-bottom: 4px;
   padding: 8px;
@@ -259,11 +259,10 @@ video:hover {
 .delay-controls {
 
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 8px;
-    margin-bottom: 4px;
-      padding: 8px;
-
+  margin-bottom: 4px;
+  padding: 8px;
   margin-left: auto;
 
 }
@@ -280,7 +279,7 @@ its respective containers */
 
 .player-container {
   margin-top: 14px;
-  text-align: center;
+    text-align: center;
 }
 
 .player-icon {
