@@ -24,6 +24,7 @@ https://www.flaticon.com/packs/music-18941370
     <section class="playlist-container">
       <div class="track">
         <h3>Hes</h3>
+
         <button class="track-button" onclick="loadTrack(1)">
           <img
             src="mediaPlaycons/sound-bars.png"
@@ -31,6 +32,7 @@ https://www.flaticon.com/packs/music-18941370
             class="player-icon"
           />
         </button>
+
         <input
           id="load-volume-1"
           type="range"
@@ -39,14 +41,24 @@ https://www.flaticon.com/packs/music-18941370
           step="0.01"
           value="1"
         />
-        <input id="delay-1" type="range" min="0" max="5" step="0.1" value="0" />
-        <button onclick="setDelayMode(1, 'load')">
-          <img src="mediaPlaycons/music-notes.png" class="player-icon" />
-        </button>
 
-        <button onclick="setDelayMode(1, 'release')">
-          <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
-        </button>
+        <div class="delay-controls">
+          <input
+            id="delay-1"
+            type="range"
+            min="0"
+            max="5"
+            step="0.1"
+            value="0"
+          />
+          <button onclick="setDelayMode(1, 'load')">
+            <img src="mediaPlaycons/music-notes.png" class="player-icon" />
+          </button>
+
+          <button onclick="setDelayMode(1, 'release')">
+            <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
+          </button>
+        </div>
       </div>
 
       <div class="track">
@@ -66,15 +78,23 @@ https://www.flaticon.com/packs/music-18941370
           step="0.01"
           value="1"
         />
+        <div class="delay-controls">
+          <input
+            id="delay-2"
+            type="range"
+            min="0"
+            max="5"
+            step="0.1"
+            value="0"
+          />
+          <button onclick="setDelayMode(2, 'load')">
+            <img src="mediaPlaycons/music-notes.png" class="player-icon" />
+          </button>
 
-        <input id="delay-2" type="range" min="0" max="5" step="0.1" value="0" />
-        <button onclick="setDelayMode(2, 'load')">
-          <img src="mediaPlaycons/music-notes.png" class="player-icon" />
-        </button>
-
-        <button onclick="setDelayMode(2, 'release')">
-          <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
-        </button>
+          <button onclick="setDelayMode(2, 'release')">
+            <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
+          </button>
+        </div>
       </div>
 
       <div class="track">
@@ -94,15 +114,23 @@ https://www.flaticon.com/packs/music-18941370
           step="0.01"
           value="1"
         />
+        <div class="delay-controls">
+          <input
+            id="delay-3"
+            type="range"
+            min="0"
+            max="5"
+            step="0.1"
+            value="0"
+          />
+          <button onclick="setDelayMode(3, 'load')">
+            <img src="mediaPlaycons/music-notes.png" class="player-icon" />
+          </button>
 
-        <input id="delay-3" type="range" min="0" max="5" step="0.1" value="0" />
-        <button onclick="setDelayMode(3, 'load')">
-          <img src="mediaPlaycons/music-notes.png" class="player-icon" />
-        </button>
-
-        <button onclick="setDelayMode(3, 'release')">
-          <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
-        </button>
+          <button onclick="setDelayMode(3, 'release')">
+            <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
+          </button>
+        </div>
       </div>
 
       <div class="track">
@@ -122,15 +150,23 @@ https://www.flaticon.com/packs/music-18941370
           step="0.01"
           value="1"
         />
+        <div class="delay-controls">
+          <input
+            id="delay-4"
+            type="range"
+            min="0"
+            max="5"
+            step="0.1"
+            value="0"
+          />
+          <button onclick="setDelayMode(4, 'load')">
+            <img src="mediaPlaycons/music-notes.png" class="player-icon" />
+          </button>
 
-        <input id="delay-4" type="range" min="0" max="5" step="0.1" value="0" />
-        <button onclick="setDelayMode(4, 'load')">
-          <img src="mediaPlaycons/music-notes.png" class="player-icon" />
-        </button>
-
-        <button onclick="setDelayMode(4, 'release')">
-          <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
-        </button>
+          <button onclick="setDelayMode(4, 'release')">
+            <img src="mediaPlaycons/cloud-music.png" class="player-icon" />
+          </button>
+        </div>
       </div>
     </section>
 

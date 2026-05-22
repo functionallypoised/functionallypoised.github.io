@@ -250,6 +250,7 @@ video:hover {
   align-items: center;
   gap: 8px;
   margin-bottom: 4px;
+  width: 100%;
   padding: 8px;
   border: 2px inset rgb(120, 191, 214);
 }
