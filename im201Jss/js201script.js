@@ -34,18 +34,24 @@ const delay4 = document.querySelector("#delay-4");
 const loadDelays = [0, 0, 0, 0];
 const releaseDelays = [0, 0, 0, 0];
 
+const delayButtons = document.querySelectorAll(".delay-button");
+
 function setDelayMode(trackNumber, mode) {
   const delayInputs = [delay1, delay2, delay3, delay4];
   const delayValue = Number(delayInputs[trackNumber - 1].value);
+  const buttonIndex =
+    mode === "load" ? (trackNumber - 1) * 2 : (trackNumber - 1) * 2 + 1;
+
+  delayButtons[buttonIndex].classList.add("standby-pulse");
 
   if (mode === "load") {
     loadDelays[trackNumber - 1] = delayValue;
-    msg.textContent = " ~:~ singular delay mapped [ON] ~:~ ";
+    msg.textContent = " ~:~ singular delay [ON] ~:~ ";
   }
 
   if (mode === "release") {
     releaseDelays[trackNumber - 1] = delayValue;
-    msg.textContent = " ~:~ cloud delay mapped [ON] ~:~ ";
+    msg.textContent = " ~:~ cloud delay [ON] ~:~ ";
   }
 }
 
@@ -80,6 +86,10 @@ function pauseCurrentTrack() {
   musicPlayer.pause();
 
   playerControlButtons[1].classList.add("active-button");
+
+  trackButtons.forEach(function (button) {
+    button.classList.remove("active-button");
+  });
 }
 
 function loopCurrentTrack() {
@@ -229,7 +239,7 @@ function loadTrack(trackNumber) {
   const delayTime = loadDelays[trackNumber - 1] * 1000;
 
   // createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
-  createGatedEcho(musicPlayer.src, loadDelays[trackNumber - 1], 0.7);
+  createGatedEcho(musicPlayer.src, loadDelays[trackNumber - 1], 0.8);
 
   setTimeout(function () {
     musicPlayer.play();
@@ -304,7 +314,7 @@ function release() {
     audio.currentTime = Math.random() * 20;
 
     // createReleaseEcho(audio, releaseDelays[index]);
-    createGatedEcho(trackPath, releaseDelays[index], audio.volume * 0.25);
+    createGatedEcho(trackPath, releaseDelays[index], audio.volume * 0.6);
     const delayTime = releaseDelays[index] * 1000;
 
     setTimeout(function () {
@@ -347,10 +357,14 @@ volume4.addEventListener("input", function () {
   if (layeredPlayers[3]) layeredPlayers[3].volume = volume4.value;
 });
 
-// function to deactivate buttons to indicate media not playing
+//deactivate buttons to indicate media not playing
 
 function deactivateAllButtons() {
   trackButtons.forEach(function (button) {
+    button.classList.remove("active-button");
+  });
+
+  playerControlButtons.forEach(function (button) {
     button.classList.remove("active-button");
   });
 
@@ -376,14 +390,12 @@ function standby() {
   msg.textContent = " ~:~ P-hasing layers [STANDBY] ~:~ ";
 }
 
-// function to stop and refresh blended tracks as an artistic
-// stop in the last play commands / session
+// function to stop and refresh blended tracks
 // informs User via text content
 
 function reset() {
   deactivateAllButtons();
-
-  masterButtons[1].classList.remove("standby-pulse");
+  masterButtons[1].classList.add("active-button");
 
   layeredPlayers.forEach(function (audio) {
     audio.pause();
