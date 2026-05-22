@@ -16,8 +16,7 @@ h2 {
   font-weight: 222;
 }
 
-h3,
-.blue-color {
+h3 {
   color: rgb(225, 255, 208);
 }
 
@@ -42,6 +41,7 @@ div {
 ul {
   list-style-type: circle;
   margin-right: 34px;
+  color: rgb(20, 8, 100);
 }
 
 section {

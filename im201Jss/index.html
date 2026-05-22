@@ -73,7 +73,7 @@ https://www.flaticon.com/packs/music-18941370
         <h3>Dry Down</h3>
         <button class="track-button" onclick="loadTrack(2)">
           <img
-            src="mediaPlaycons/sound-bars.png"
+            src="mediaPlaycons/play.png"
             alt="load track"
             class="player-icon"
           />
@@ -118,7 +118,7 @@ https://www.flaticon.com/packs/music-18941370
         <h3>Leapt</h3>
         <button class="track-button" onclick="loadTrack(3)">
           <img
-            src="mediaPlaycons/sound-bars.png"
+            src="mediaPlaycons/play.png"
             alt="load track"
             class="player-icon"
           />
@@ -162,7 +162,7 @@ https://www.flaticon.com/packs/music-18941370
         <h3>Water Feature</h3>
         <button class="track-button" onclick="loadTrack(4)">
           <img
-            src="mediaPlaycons/sound-bars.png"
+            src="mediaPlaycons/play.png"
             alt="load track"
             class="player-icon"
           />
@@ -207,31 +207,30 @@ https://www.flaticon.com/packs/music-18941370
 JS with the media divisions contained above -->
 
     <section class="player-container">
+      <ul>
+        select individual tracks; pause/play/control track time & speed
+      </ul>
       <audio id="music-player"></audio>
+
+      <button class="player-control-button" onclick="pauseCurrentTrack()">
+        <img src="mediaPlaycons/pause.png" alt="pause" class="controls-icon" />
+      </button>
+
+      <button class="player-control-button" onclick="loopCurrentTrack()">
+        <img
+          src="mediaPlaycons/synchronize.png"
+          alt="loop"
+          class="controls-icon"
+        />
+      </button>
+
+      <input id="track-progress" type="range" min="0" max="100" value="0" />
 
       <section class="custom-player">
         <button class="player-control-button" onclick="playCurrentTrack()">
           <img
             src="mediaPlaycons/sound-bars.png"
             alt="play"
-            class="controls-icon"
-          />
-        </button>
-
-        <button class="player-control-button" onclick="pauseCurrentTrack()">
-          <img
-            src="mediaPlaycons/pause.png"
-            alt="pause"
-            class="controls-icon"
-          />
-        </button>
-
-        <input id="track-progress" type="range" min="0" max="100" value="0" />
-
-        <button class="player-control-button" onclick="loopCurrentTrack()">
-          <img
-            src="mediaPlaycons/synchronize.png"
-            alt="loop"
             class="controls-icon"
           />
         </button>
@@ -263,22 +262,23 @@ JS with the media divisions contained above -->
    as a DJ simulator; sound design;  as well as an album archive-->
 
     <section class="mixer-container">
-      <h2>lay down & mix; curate a P-hase cloud</h2>
       <ul>
-        top left phasers control volume of each track
+        left phasers control volume of each track
       </ul>
       <ul>
-        in the playlist above.
-      </ul>
-      <ul>
-        top right phasers control delay of each track,
+        right phasers control delay of each track,
       </ul>
       <ul>
         select to delay individual songs, or delay entire cloud.
       </ul>
 
+      <h2>lay down & mix; curate a P-hase cloud</h2>
+
       <label>
         Hes
+        <ul>
+          volume
+        </ul>
         <input
           id="release-volume-1"
           type="range"
@@ -291,6 +291,9 @@ JS with the media divisions contained above -->
 
       <label>
         Dry Down
+        <ul>
+          volume
+        </ul>
         <input
           id="release-volume-2"
           type="range"
@@ -303,6 +306,9 @@ JS with the media divisions contained above -->
 
       <label>
         Leapt
+        <ul>
+          volume
+        </ul>
         <input
           id="release-volume-3"
           type="range"
@@ -315,6 +321,9 @@ JS with the media divisions contained above -->
 
       <label>
         Water Feature
+        <ul>
+          volume
+        </ul>
         <input
           id="release-volume-4"
           type="range"
