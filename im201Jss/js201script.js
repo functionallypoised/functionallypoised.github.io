@@ -115,11 +115,9 @@ speedControl.addEventListener("input", function () {
 
 function loadTrack(trackNumber) {
   deactivateTrackButtons();
+  currentTrackNumber = trackNumber;
   if (trackNumber === 1) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/1_p-hase_Hes.mp3";
-    loadVolume1.addEventListener("input", function () {
-      musicPlayer.volume = loadVolume1.value;
-    });
     musicPlayer.volume = loadVolume1.value;
 
     trackButtons[0].classList.add("active-button");
@@ -132,11 +130,7 @@ function loadTrack(trackNumber) {
   } else if (trackNumber === 2) {
     musicPlayer.src =
       "A-V_media_RMIT-IntMed/2_p-hase_Dry-Down-feat-Ben-Snaath.mp3";
-    loadVolume2.addEventListener("input", function () {
-      musicPlayer.volume = loadVolume2.value;
-    });
     musicPlayer.volume = loadVolume2.value;
-
     trackButtons[1].classList.add("active-button");
 
     musicPlayer.onended = function () {
@@ -146,9 +140,6 @@ function loadTrack(trackNumber) {
     msg.textContent = " ~: Dry Down sound [ON] :~ ";
   } else if (trackNumber === 3) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/3_p-hase_Leapt.mp3";
-    loadVolume3.addEventListener("input", function () {
-      musicPlayer.volume = loadVolume3.value;
-    });
     musicPlayer.volume = loadVolume3.value;
 
     trackButtons[2].classList.add("active-button");
@@ -159,9 +150,6 @@ function loadTrack(trackNumber) {
     msg.textContent = " ~: Leapt sound [ON] :~ ";
   } else if (trackNumber === 4) {
     musicPlayer.src = "A-V_media_RMIT-IntMed/4_p-hase_Water-Feature.mp3";
-    loadVolume4.addEventListener("input", function () {
-      musicPlayer.volume = loadVolume4.value;
-    });
     musicPlayer.volume = loadVolume4.value;
 
     trackButtons[3].classList.add("active-button");
@@ -172,6 +160,7 @@ function loadTrack(trackNumber) {
 
     msg.textContent = " ~: Water Feature sound [ON] :~ ";
   }
+  // wait to listen for input of delay to delay track times
 
   const delayTime = loadDelays[trackNumber - 1] * 1000;
 
@@ -179,6 +168,35 @@ function loadTrack(trackNumber) {
     musicPlayer.play();
   }, delayTime);
 }
+
+// wait to listen to individual loadTrack inputs, only speaks to its
+// respective track,
+
+let currentTrackNumber = 0;
+
+loadVolume1.addEventListener("input", function () {
+  if (currentTrackNumber === 1) {
+    musicPlayer.volume = loadVolume1.value;
+  }
+});
+
+loadVolume2.addEventListener("input", function () {
+  if (currentTrackNumber === 2) {
+    musicPlayer.volume = loadVolume2.value;
+  }
+});
+
+loadVolume3.addEventListener("input", function () {
+  if (currentTrackNumber === 3) {
+    musicPlayer.volume = loadVolume3.value;
+  }
+});
+
+loadVolume4.addEventListener("input", function () {
+  if (currentTrackNumber === 4) {
+    musicPlayer.volume = loadVolume4.value;
+  }
+});
 
 // for User to select all [#] tracks at once {for avantGard fun}
 //  informs User of the blended tracks playing via UI

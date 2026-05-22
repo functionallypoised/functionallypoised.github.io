@@ -76,7 +76,6 @@ section {
   background-color: rgba(64, 103, 116, 0.452);
 
   border: 2px solid rgb(128, 163, 165);
-
   
 }
 
@@ -92,28 +91,9 @@ section {
   width: 100px;
 }
 
-.custom-player {
-  width: 94%;
-
-  margin: 18px auto;
-
-  padding: 12px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 10px;
-
-  background-color: rgba(64, 103, 116, 0.452);
-
-  border: 2px solid rgb(128, 163, 165);
-  }
-
   
 /* // indicate msg to user to select track */
+
 #msg {
 
   margin-top: 8px;
@@ -365,3 +345,129 @@ maintain scale down
     opacity: 1;
   }
 }
+
+/* 
+
+wireframes:
+┌────────────────────────────────────────────┐
+│                P-HASE ARCHIVE              │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│ TRACK 1 : Hes                             │
+│ [sound-bars] [volume] [delay] [notes] [cloud]
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│ TRACK 2 : Dry Down                        │
+│ [sound-bars] [volume] [delay] [notes] [cloud]
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│ TRACK 3 : Leapt                           │
+│ [sound-bars] [volume] [delay] [notes] [cloud]
+└────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────┐
+│ TRACK 4 : Water Feature                   │
+│ [sound-bars] [volume] [delay] [notes] [cloud]
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│ CUSTOM PLAYER                             │
+│ [play] [pause] [timeline] [loop] [speed] │
+└────────────────────────────────────────────┘
+
+                 status msg
+       “quaDripital layers of P-hasing”
+
+
+┌────────────────────────────────────────────┐
+│ MIXER CLOUD                               │
+│ Hes          [release-volume]             │
+│ Dry Down     [release-volume]             │
+│ Leapt        [release-volume]             │
+│ WaterFeature [release-volume]             │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│ MASTER CONTROLS                           │
+│ [release] [standby] [reset]               │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│ VIDEO ART                                 │
+│ autoplay / loop / defrag hover            │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│ ASCII PARTICLE CLOUD SYSTEM               │
+│ idle drift / melt / precipitation         │
+└────────────────────────────────────────────┘ */
+
+/* P-hase Archive flow chart
+
+USER ENTERS PAGE
+        ↓
+VIDEO AUTOPLAYS
+        ↓
+ASCII PARTICLES IDLE DRIP
+        ↓
+USER SELECTS TRACK
+        ↓
+loadTrack(trackNumber)
+        ↓
+singular audio playback
+        ↓
+custom player controls
+(play / pause / loop / speed)
+        ↓
+optional delay mapping
+        ↓
+music-notes button
+        ↓
+delay affects singular playback
+
+
+────────────────────────────
+
+
+USER ACTIVATES RELEASE
+        ↓
+release()
+        ↓
+all tracks layered
+        ↓
+randomized playback positions
+        ↓
+cloud playback
+        ↓
+release mixer sliders
+        ↓
+cloud-music button
+        ↓
+delay affects layered cloud playback
+
+
+────────────────────────────
+
+
+STANDBY
+        ↓
+pause layeredPlayers[]
+        ↓
+retain timeline placement
+
+
+RESET
+        ↓
+stop layeredPlayers[]
+        ↓
+reset layered cloud state
+        ↓
+preserve singular playback */
