@@ -280,9 +280,8 @@ function loadTrack(trackNumber) {
 
   const delayTime = loadDelays[trackNumber - 1] * 1000;
 
-  // createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
-  // quick ghost echoes
-  createGatedEcho(musicPlayer.src, 1);
+  //   // quick ghost echoes
+  createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
 
   // delayed actual playback
   setTimeout(function () {
@@ -369,7 +368,7 @@ function release() {
     const delayTime = releaseDelays[index] * 1000;
 
     // fast sporadic cloud echoes
-    createGatedEcho(trackPath, audio.volume * 0.8);
+    createGatedEcho(trackPath, 1, audio.volume * 0.8);
 
     // delayed original cloud playback
     setTimeout(function () {
