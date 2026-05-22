@@ -29,7 +29,11 @@ p {
           font-size: 22px;
 }
 
-h4,
+h4 {
+    color: rgb(20, 8, 100);
+      font-weight: 12;
+}
+
 div {
   color: rgb(20, 8, 100);
 
