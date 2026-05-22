@@ -107,6 +107,37 @@ speedControl.addEventListener("input", function () {
   speedDisplay.textContent = speedControl.value + "x";
 });
 
+// functins to add echo to the seperate audio sources via delay slider
+//  inputs for reverb sim
+
+let echoPlayers = [];
+
+function createEcho(trackPath, delaySeconds) {
+  const echoAudio = new Audio(trackPath);
+
+  echoAudio.volume = 0.6;
+  echoAudio.currentTime = musicPlayer.currentTime;
+
+  setTimeout(function () {
+    echoAudio.play();
+    echoPlayers.push(echoAudio);
+  }, delaySeconds * 1000);
+}
+
+function createReleaseEcho(audioObject, delaySeconds) {
+  const echoAudio = new Audio(audioObject.src);
+
+  echoAudio.volume = audioObject.volume * 0.25;
+
+  echoAudio.currentTime = audioObject.currentTime;
+
+  setTimeout(function () {
+    echoAudio.play();
+
+    echoPlayers.push(echoAudio);
+  }, delaySeconds * 1000);
+}
+
 // functions to connect divisioned
 // track numbers to each variable of media content
 //when User selects a track[#] button, the function will
@@ -163,6 +194,8 @@ function loadTrack(trackNumber) {
   // wait to listen for input of delay to delay track times
 
   const delayTime = loadDelays[trackNumber - 1] * 1000;
+
+  createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
 
   setTimeout(function () {
     musicPlayer.play();
@@ -235,6 +268,8 @@ function release() {
     if (index === 3) audio.volume = volume4.value;
 
     audio.currentTime = Math.random() * 20;
+
+    createReleaseEcho(audio, releaseDelays[index]);
     const delayTime = releaseDelays[index] * 1000;
 
     setTimeout(function () {
