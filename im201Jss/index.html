@@ -207,26 +207,28 @@ https://www.flaticon.com/packs/music-18941370
 JS with the media divisions contained above -->
 
     <section class="player-container">
-      <ul>
-        select individual tracks; pause/play/control track time & speed
-      </ul>
+      <h4>select individual tracks; pause/play/control track time & speed</h4>
+
       <audio id="music-player"></audio>
 
-      <button class="player-control-button" onclick="pauseCurrentTrack()">
-        <img src="mediaPlaycons/pause.png" alt="pause" class="controls-icon" />
-      </button>
-
-      <button class="player-control-button" onclick="loopCurrentTrack()">
-        <img
-          src="mediaPlaycons/synchronize.png"
-          alt="loop"
-          class="controls-icon"
-        />
-      </button>
-
-      <input id="track-progress" type="range" min="0" max="100" value="0" />
-
       <section class="custom-player">
+        <button class="player-control-button" onclick="pauseCurrentTrack()">
+          <img
+            src="mediaPlaycons/pause.png"
+            alt="pause"
+            class="controls-icon"
+          />
+        </button>
+
+        <button class="player-control-button" onclick="loopCurrentTrack()">
+          <img
+            src="mediaPlaycons/synchronize.png"
+            alt="loop"
+            class="controls-icon"
+          />
+        </button>
+
+        <input id="track-progress" type="range" min="0" max="100" value="0" />
         <button class="player-control-button" onclick="playCurrentTrack()">
           <img
             src="mediaPlaycons/sound-bars.png"
@@ -262,23 +264,20 @@ JS with the media divisions contained above -->
    as a DJ simulator; sound design;  as well as an album archive-->
 
     <section class="mixer-container">
-      <ul>
+      <h4>
         left phasers control volume of each track
-      </ul>
-      <ul>
+      </h4>
+      <h4>
         right phasers control delay of each track,
-      </ul>
-      <ul>
+      </h4>
+      <h4>
         select to delay individual songs, or delay entire cloud.
-      </ul>
+      </h4>
 
       <h2>lay down & mix; curate a P-hase cloud</h2>
 
       <label>
         Hes
-        <ul>
-          volume
-        </ul>
         <input
           id="release-volume-1"
           type="range"
@@ -291,9 +290,6 @@ JS with the media divisions contained above -->
 
       <label>
         Dry Down
-        <ul>
-          volume
-        </ul>
         <input
           id="release-volume-2"
           type="range"
@@ -306,9 +302,6 @@ JS with the media divisions contained above -->
 
       <label>
         Leapt
-        <ul>
-          volume
-        </ul>
         <input
           id="release-volume-3"
           type="range"
@@ -321,9 +314,6 @@ JS with the media divisions contained above -->
 
       <label>
         Water Feature
-        <ul>
-          volume
-        </ul>
         <input
           id="release-volume-4"
           type="range"
@@ -333,18 +323,20 @@ JS with the media divisions contained above -->
           value="1"
         />
       </label>
-      <ul>
+        <h4>
+          control volume layers of the cloud
+        </h4>
         select to release all P-hase tracks at randomised starcodes.
-      </ul>
-      <ul>
+      </h4>
+      <h4>
         Every new release adds blended layers
-      </ul>
-      <ul>
+      </h4>
+      <h4>
         select standby to hold the cloud in place
-      </ul>
-      <ul>
+      </h4>
+      <h4>
         select reset to clear the cloud
-      </ul>
+      </h4>
     </section>
 
     <!-- section for master controls command all tracks at once ( for avantGard fun )
