@@ -27,30 +27,38 @@ https://www.flaticon.com/packs/music-18941370
 
         <button class="track-button" onclick="loadTrack(1)">
           <img
-            src="mediaPlaycons/sound-bars.png"
+            src="mediaPlaycons/play.png"
             alt="load track"
             class="player-icon"
           />
         </button>
 
-        <input
-          id="load-volume-1"
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value="1"
-        />
+        <label>
+          volume
 
-        <div class="delay-controls">
           <input
-            id="delay-1"
+            id="load-volume-1"
             type="range"
             min="0"
-            max="120"
-            step="0.1"
-            value="0"
+            max="1"
+            step="0.01"
+            value="1"
           />
+        </label>
+
+        <div class="delay-controls">
+          <label>
+            delay
+            <input
+              id="delay-1"
+              type="range"
+              min="0"
+              max="120"
+              step="0.1"
+              value="0"
+            />
+          </label>
+
           <button onclick="setDelayMode(1, 'load')">
             <img src="mediaPlaycons/music-notes.png" class="player-icon" />
           </button>
@@ -70,23 +78,32 @@ https://www.flaticon.com/packs/music-18941370
             class="player-icon"
           />
         </button>
-        <input
-          id="load-volume-2"
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value="1"
-        />
-        <div class="delay-controls">
+
+        <label>
+          volume
           <input
-            id="delay-2"
+            id="load-volume-2"
             type="range"
             min="0"
-            max="120"
-            step="0.1"
-            value="0"
+            max="1"
+            step="0.01"
+            value="1"
           />
+        </label>
+
+        <div class="delay-controls">
+          <label>
+            delay
+            <input
+              id="delay-2"
+              type="range"
+              min="0"
+              max="120"
+              step="0.1"
+              value="0"
+            />
+          </label>
+
           <button onclick="setDelayMode(2, 'load')">
             <img src="mediaPlaycons/music-notes.png" class="player-icon" />
           </button>
@@ -106,23 +123,31 @@ https://www.flaticon.com/packs/music-18941370
             class="player-icon"
           />
         </button>
-        <input
-          id="load-volume-3"
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value="1"
-        />
-        <div class="delay-controls">
+        <label>
+          volume
           <input
-            id="delay-3"
+            id="load-volume-3"
             type="range"
             min="0"
-            max="120"
-            step="0.1"
-            value="0"
+            max="1"
+            step="0.01"
+            value="1"
           />
+        </label>
+
+        <div class="delay-controls">
+          <label>
+            delay
+            <input
+              id="delay-3"
+              type="range"
+              min="0"
+              max="120"
+              step="0.1"
+              value="0"
+            />
+          </label>
+
           <button onclick="setDelayMode(3, 'load')">
             <img src="mediaPlaycons/music-notes.png" class="player-icon" />
           </button>
@@ -142,23 +167,31 @@ https://www.flaticon.com/packs/music-18941370
             class="player-icon"
           />
         </button>
-        <input
-          id="load-volume-4"
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value="1"
-        />
-        <div class="delay-controls">
+        <label>
+          volume
           <input
-            id="delay-4"
+            id="load-volume-4"
             type="range"
             min="0"
-            max="120"
-            step="0.1"
-            value="0"
+            max="1"
+            step="0.01"
+            value="1"
           />
+        </label>
+
+        <div class="delay-controls">
+          <label>
+            delay
+            <input
+              id="delay-4"
+              type="range"
+              min="0"
+              max="120"
+              step="0.1"
+              value="0"
+            />
+          </label>
+
           <button onclick="setDelayMode(4, 'load')">
             <img src="mediaPlaycons/music-notes.png" class="player-icon" />
           </button>
@@ -178,7 +211,11 @@ JS with the media divisions contained above -->
 
       <section class="custom-player">
         <button class="player-control-button" onclick="playCurrentTrack()">
-          <img src="mediaPlaycons/play.png" alt="play" class="controls-icon" />
+          <img
+            src="mediaPlaycons/sound-bars.png"
+            alt="play"
+            class="controls-icon"
+          />
         </button>
 
         <button class="player-control-button" onclick="pauseCurrentTrack()">
@@ -227,6 +264,18 @@ JS with the media divisions contained above -->
 
     <section class="mixer-container">
       <h2>lay down & mix; curate a P-hase cloud</h2>
+      <ul>
+        top left phasers control volume of each track
+      </ul>
+      <ul>
+        in the playlist above.
+      </ul>
+      <ul>
+        top right phasers control delay of each track,
+      </ul>
+      <ul>
+        select to delay individual songs, or delay entire cloud.
+      </ul>
 
       <label>
         Hes
@@ -275,6 +324,18 @@ JS with the media divisions contained above -->
           value="1"
         />
       </label>
+      <ul>
+        select to release all P-hase tracks at randomised starcodes.
+      </ul>
+      <ul>
+        Every new release adds blended layers
+      </ul>
+      <ul>
+        select standby to hold the cloud in place
+      </ul>
+      <ul>
+        select reset to clear the cloud
+      </ul>
     </section>
 
     <!-- section for master controls command all tracks at once ( for avantGard fun )
@@ -297,6 +358,7 @@ https://www.flaticon.com/packs/music-18941370
           class="controls-icon"
         />
       </button>
+      <label> releaseCloud </label>
 
       <button class="master-button" onclick="standby()">
         <img
@@ -305,6 +367,7 @@ https://www.flaticon.com/packs/music-18941370
           class="controls-icon"
         />
       </button>
+      <label> standbyCloud </label>
 
       <button class="master-button" onclick="reset()">
         <img
@@ -313,6 +376,7 @@ https://www.flaticon.com/packs/music-18941370
           class="controls-icon"
         />
       </button>
+      <label> resetCloud </label>
     </section>
 
     <!-- the video media content id tags to connect

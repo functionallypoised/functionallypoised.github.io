@@ -229,7 +229,7 @@ function loadTrack(trackNumber) {
   const delayTime = loadDelays[trackNumber - 1] * 1000;
 
   // createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
-  createGatedEcho(musicPlayer.src, loadDelays[trackNumber - 1], 0.25);
+  createGatedEcho(musicPlayer.src, loadDelays[trackNumber - 1], 0.7);
 
   setTimeout(function () {
     musicPlayer.play();
