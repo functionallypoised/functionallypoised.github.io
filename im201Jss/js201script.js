@@ -24,7 +24,7 @@ function deactivatePlayerControlButtons() {
 }
 
 // functions to connect with input delays,
-// have seperate buttons delay via slider
+// have seperate delay button managing via slider
 
 const delay1 = document.querySelector("#delay-1");
 const delay2 = document.querySelector("#delay-2");
