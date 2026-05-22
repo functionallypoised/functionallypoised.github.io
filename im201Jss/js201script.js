@@ -23,6 +23,32 @@ function deactivatePlayerControlButtons() {
   });
 }
 
+// functions to connect with input delays,
+// have seperate buttons delay via slider
+
+const delay1 = document.querySelector("#delay-1");
+const delay2 = document.querySelector("#delay-2");
+const delay3 = document.querySelector("#delay-3");
+const delay4 = document.querySelector("#delay-4");
+
+const loadDelays = [0, 0, 0, 0];
+const releaseDelays = [0, 0, 0, 0];
+
+function setDelayMode(trackNumber, mode) {
+  const delayInputs = [delay1, delay2, delay3, delay4];
+  const delayValue = Number(delayInputs[trackNumber - 1].value);
+
+  if (mode === "load") {
+    loadDelays[trackNumber - 1] = delayValue;
+    msg.textContent = " ~:~ singular delay mapped [ON] ~:~ ";
+  }
+
+  if (mode === "release") {
+    releaseDelays[trackNumber - 1] = delayValue;
+    msg.textContent = " ~:~ cloud delay mapped [ON] ~:~ ";
+  }
+}
+
 // funct loadTrack volume inputs
 
 const loadVolume1 = document.querySelector("#load-volume-1");
@@ -147,7 +173,11 @@ function loadTrack(trackNumber) {
     msg.textContent = " ~: Water Feature sound [ON] :~ ";
   }
 
-  musicPlayer.play();
+  const delayTime = loadDelays[trackNumber - 1] * 1000;
+
+  setTimeout(function () {
+    musicPlayer.play();
+  }, delayTime);
 }
 
 // for User to select all [#] tracks at once {for avantGard fun}
@@ -187,7 +217,11 @@ function release() {
     if (index === 3) audio.volume = volume4.value;
 
     audio.currentTime = Math.random() * 20;
-    audio.play();
+    const delayTime = releaseDelays[index] * 1000;
+
+    setTimeout(function () {
+      audio.play();
+    }, delayTime);
 
     layeredPlayers.push(audio);
 
