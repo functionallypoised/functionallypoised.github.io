@@ -107,36 +107,69 @@ speedControl.addEventListener("input", function () {
   speedDisplay.textContent = speedControl.value + "x";
 });
 
-// functins to add echo to the seperate audio sources via delay slider
-//  inputs for reverb sim
-
 let echoPlayers = [];
+//
+// //
+//ive been chatting to my guy right; about how to
+// add echo to the seperate audio sources via delay slider,
+//  and also to add inputs for reverb sim, so that
+// the User can simulate echo and reverb of each track layer,
+// & blended layer.
+//  be controlled by the same inputs, but with seperate range of control,
+// buttons managed connection to the delay slider, to then trigger the echo function
+///////// so now Im going to try a gated control--if the gatedecho is not commed out
+///////////that will be yay
 
-function createEcho(trackPath, delaySeconds) {
+function createGatedEcho(trackPath, delaySeconds, volumeAmount) {
   const echoAudio = new Audio(trackPath);
 
-  echoAudio.volume = 0.6;
-  echoAudio.currentTime = musicPlayer.currentTime;
+  echoAudio.volume = volumeAmount;
 
-  setTimeout(function () {
-    echoAudio.play();
-    echoPlayers.push(echoAudio);
-  }, delaySeconds * 1000);
+  echoAudio.addEventListener("loadedmetadata", function () {
+    const randomStart = Math.random() * echoAudio.duration;
+    const randomLength = Math.random() * 3 + 1;
+
+    echoAudio.currentTime = randomStart;
+
+    setTimeout(function () {
+      echoAudio.play();
+      echoPlayers.push(echoAudio);
+
+      setTimeout(function () {
+        echoAudio.pause();
+      }, randomLength * 1000);
+    }, delaySeconds * 1000);
+  });
 }
 
-function createReleaseEcho(audioObject, delaySeconds) {
-  const echoAudio = new Audio(audioObject.src);
+//  functins to add echo to the seperate audio sources via delay slider
+// //  inputs for reverb sim
 
-  echoAudio.volume = audioObject.volume * 0.25;
+// function createEcho(trackPath, delaySeconds) {
+//   const echoAudio = new Audio(trackPath);
 
-  echoAudio.currentTime = audioObject.currentTime;
+//   echoAudio.volume = 0.6;
+//   echoAudio.currentTime = musicPlayer.currentTime;
 
-  setTimeout(function () {
-    echoAudio.play();
+//   setTimeout(function () {
+//     echoAudio.play();
+//     echoPlayers.push(echoAudio);
+//   }, delaySeconds * 1000);
+// }
 
-    echoPlayers.push(echoAudio);
-  }, delaySeconds * 1000);
-}
+// function createReleaseEcho(audioObject, delaySeconds) {
+//   const echoAudio = new Audio(audioObject.src);
+
+//   echoAudio.volume = audioObject.volume * 0.25;
+
+//   echoAudio.currentTime = audioObject.currentTime;
+
+//   setTimeout(function () {
+//     echoAudio.play();
+
+//     echoPlayers.push(echoAudio);
+//   }, delaySeconds * 1000);
+// }
 
 // functions to connect divisioned
 // track numbers to each variable of media content
@@ -195,7 +228,8 @@ function loadTrack(trackNumber) {
 
   const delayTime = loadDelays[trackNumber - 1] * 1000;
 
-  createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
+  // createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
+  createGatedEcho(musicPlayer.src, loadDelays[trackNumber - 1], 0.25);
 
   setTimeout(function () {
     musicPlayer.play();
@@ -269,7 +303,8 @@ function release() {
 
     audio.currentTime = Math.random() * 20;
 
-    createReleaseEcho(audio, releaseDelays[index]);
+    // createReleaseEcho(audio, releaseDelays[index]);
+    createGatedEcho(trackPath, releaseDelays[index], audio.volume * 0.25);
     const delayTime = releaseDelays[index] * 1000;
 
     setTimeout(function () {
