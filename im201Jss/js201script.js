@@ -92,7 +92,7 @@ function playCurrentTrack() {
 
   musicPlayer.play();
 
-  playerControlButtons[0].classList.add("active-button");
+  playerControlButtons[2].classList.add("active-button");
 }
 
 function pauseCurrentTrack() {
@@ -100,7 +100,7 @@ function pauseCurrentTrack() {
 
   musicPlayer.pause();
 
-  playerControlButtons[1].classList.add("active-button");
+  playerControlButtons[0].classList.add("active-button");
 
   trackButtons.forEach(function (button) {
     button.classList.remove("active-button");
@@ -111,10 +111,10 @@ function loopCurrentTrack() {
   musicPlayer.loop = !musicPlayer.loop;
 
   if (musicPlayer.loop) {
-    playerControlButtons[2].classList.add("active-button");
+    playerControlButtons[1].classList.add("active-button");
     msg.textContent = " ~:~ looping singular P-hase layer [ON] ~:~ ";
   } else {
-    playerControlButtons[2].classList.remove("active-button");
+    playerControlButtons[1].classList.remove("active-button");
     msg.textContent = " ~:~ looping singular P-hase layer [OFF] ~:~ ";
   }
 }
