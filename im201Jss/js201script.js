@@ -281,7 +281,8 @@ function loadTrack(trackNumber) {
   const delayTime = loadDelays[trackNumber - 1] * 1000;
 
   //   // quick ghost echoes
-  createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
+  // createEcho(musicPlayer.src, loadDelays[trackNumber - 1]);
+  createGatedEcho(musicPlayer.src, 1, 0.8);
 
   // delayed actual playback
   setTimeout(function () {
@@ -473,19 +474,40 @@ function standby() {
 //      //       //      //       //      //
 function reset() {
   deactivateAllButtons();
+
   masterButtons[2].classList.add("active-button");
 
+  // reset delay values
+  loadDelays.fill(0);
+  releaseDelays.fill(0);
+
+  delay1.value = 0;
+  delay2.value = 0;
+  delay3.value = 0;
+  delay4.value = 0;
+
+  // remove delay button pulse
+  delayButtons.forEach(function (button) {
+    button.classList.remove("standby-pulse");
+    button.classList.remove("active-button");
+  });
+
+  // stop release layers
   layeredPlayers.forEach(function (audio) {
     audio.pause();
     audio.currentTime = 0;
   });
 
+  layeredPlayers.length = 0;
+
+  // stop echo layers
   echoPlayers.forEach(function (audio) {
     audio.pause();
     audio.currentTime = 0;
   });
 
   echoPlayers.length = 0;
+
   msg.textContent = " ~:~ all P-hasing [OFF] ~:~ !! reset !! ~:~ ";
 }
 
