@@ -25,22 +25,28 @@ window.addEventListener("scroll", function () {
     `;
   });
 
-  dreamPieces.forEach(function (piece, index) {
-    const depth = index * 6;
+  const dreamProgress = Math.min(1, Math.max(0, (progress - 0.95) / 0.05));
 
-    piece.style.opacity = progress;
+  dreamPieces.forEach(function (piece, index) {
+    const depth = index * 40;
+    const rotateAmount = dreamProgress * 720;
+    const moveAmount = dreamProgress * index * 60;
+
+    piece.style.opacity = dreamProgress;
 
     piece.style.transform = `
-      translateZ(${depth}px)
-      rotateY(${progress * 720}deg)
-      scale(${0.5 + progress})
-    `;
+    translateZ(${depth}px)
+    translateY(${-200 + moveAmount}px)
+    rotateX(${dreamProgress * 180}deg)
+    rotateY(${rotateAmount + index * 45}deg)
+    scale(${0.2 + dreamProgress * 1.5})
+  `;
   });
 
   if (progress > 0.95 && sceneChanged === false) {
     sceneChanged = true;
 
-    document.querySelector("#scene1").style.display = "none";
+    document.querySelector("#scene1").style.opacity = "0";
     document.querySelector("#scene2").classList.add("active");
   }
 });

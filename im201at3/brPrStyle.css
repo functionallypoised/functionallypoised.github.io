@@ -54,8 +54,8 @@ body {
   opacity: 0;
   visibility: hidden;
 
-  position: fixed;
-  inset: 0;
+  width: 100%;
+  min-height: 300vh;
 
   display: grid;
   place-items: center;
@@ -63,6 +63,11 @@ body {
   background: #022129;
 
   transition: opacity 2s;
+}
+
+#scene2.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 #scene2.active {
