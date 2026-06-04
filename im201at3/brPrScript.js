@@ -6,18 +6,18 @@ window.addEventListener("scroll", function () {
   const progress = window.scrollY / maxScroll;
 
   pieces.forEach(function (piece, index) {
-    const depth = index * 35;
+    const depth = index * 12;
     const rotateAmount = progress * 360;
-    const buildAmount = progress * index * 40;
+    const buildAmount = progress * index * 4;
 
     piece.style.opacity = progress;
 
     piece.style.transform = `
       translateZ(${depth}px)
-      translateY(${100 - buildAmount}px)
+      translateY(${120 - buildAmount}px)
       rotateX(70deg)
-      rotateZ(${rotateAmount + index * 25}deg)
-      scale(${0.4 + progress * 0.8})
+      rotateZ(${rotateAmount + index * 12}deg)
+      scale(${0.2 + progress * 0.9})
     `;
   });
 });
