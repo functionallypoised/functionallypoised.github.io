@@ -25,22 +25,26 @@ window.addEventListener("scroll", function () {
 )`;
 
   pieces.forEach(function (piece, index) {
+    const returnAmount = Math.min(1, progress2 / 0.45);
+
+    const pieceProgress = progress1 * (1 - returnAmount) + 0.12 * returnAmount;
+
     const depth = index * 12;
-    const rotateAmount = progress1 * 360;
-    const buildAmount = progress1 * index * 4;
+    const rotateAmount = pieceProgress * 360;
+    const buildAmount = pieceProgress * index * 4;
 
     const fadeOutPoint = 0.45;
     const fadeAmount = Math.min(1, progress2 / fadeOutPoint);
 
-    piece.style.opacity = progress1 * (1 - fadeAmount);
+    piece.style.opacity = pieceProgress * (1 - fadeAmount);
 
     piece.style.transform = `
-      translateZ(${depth}px)
-      translateY(${120 - buildAmount}px)
-      rotateX(70deg)
-      rotateZ(${rotateAmount + index * 12}deg)
-      scale(${0.2 + progress1 * 0.9})
-    `;
+    translateZ(${depth}px)
+    translateY(${120 - buildAmount}px)
+    rotateX(70deg)
+    rotateZ(${rotateAmount + index * 12}deg)
+    scale(${0.2 + pieceProgress * 0.9})
+  `;
   });
 
   dreamPieces.forEach(function (piece, index) {
