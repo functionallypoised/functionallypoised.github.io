@@ -16,12 +16,18 @@ window.addEventListener("scroll", function () {
   const progress1 = getSectionProgress(scene1);
   const progress2 = getSectionProgress(scene2);
 
+  document.body.style.backgroundColor = `rgb(
+  ${9 - progress2 * 7},
+  ${34 - progress2 * 1},
+  ${34 + progress2 * 7}
+)`;
+
   pieces.forEach(function (piece, index) {
     const depth = index * 12;
     const rotateAmount = progress1 * 360;
     const buildAmount = progress1 * index * 4;
 
-    piece.style.opacity = progress1;
+    piece.style.opacity = Math.max(0, progress1 - progress2);
 
     piece.style.transform = `
       translateZ(${depth}px)

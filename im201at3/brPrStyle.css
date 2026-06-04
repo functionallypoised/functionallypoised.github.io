@@ -58,7 +58,8 @@ body {
 }
 
 #scene2 {
-  background: #022129;
+  margin-top: -260vh;
+  background: transparent;
 }
 
 .dreamPiece {
