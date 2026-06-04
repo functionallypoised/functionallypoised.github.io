@@ -43,7 +43,7 @@ window.addEventListener("scroll", function () {
   `;
   });
 
-  if (progress > 0.95 && sceneChanged === false) {
+  if (progress > 0.69 && sceneChanged === false) {
     sceneChanged = true;
 
     document.querySelector("#scene1").style.opacity = "0";
