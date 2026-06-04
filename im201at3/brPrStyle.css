@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  background: #0f1412;
-  color: white;
+  background: #092222;
+  color: rgb(172, 218, 230);
   font-family: "CoralPixels", sans-serif;
 }
 
@@ -13,7 +13,7 @@ body {
 
 @font-face {
   font-family: "CoralPixels";
-  src: url("fonts/CoralPixels.ttf") format("truetype");
+  src: url("fonts/CoralPixels-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
