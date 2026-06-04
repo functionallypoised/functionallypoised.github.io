@@ -50,37 +50,23 @@ body {
   transition: transform 0.1s linear, opacity 0.1s linear;
 }
 
-#scene2 {
-  opacity: 0;
-  visibility: hidden;
 
+#scene1,
+#scene2 {
   width: 100%;
   min-height: 300vh;
+}
 
-  display: grid;
-  place-items: center;
-
+#scene2 {
   background: #022129;
-
-  transition: opacity 2s;
-}
-
-#scene2.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-#scene2.active {
-  opacity: 1;
-  visibility: visible;
 }
 
 .dreamPiece {
   position: absolute;
   width: 80px;
   height: 80px;
-  left: 110px;
-  top: 110px;
+  left: 120px;
+  top: 120px;
   border: 1px solid rgba(75, 129, 146, 0.5);
   background: rgba(2, 90, 105, 0.08);
   border-radius: 4px;

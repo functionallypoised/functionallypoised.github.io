@@ -1,52 +1,50 @@
 console.log("Scroll script connected");
 
-let sceneChanged = false;
-
 const pieces = document.querySelectorAll(".piece");
 const dreamPieces = document.querySelectorAll(".dreamPiece");
 
+const scene1 = document.querySelector("#scene1");
+const scene2 = document.querySelector("#scene2");
+
+function getSectionProgress(section) {
+  const rect = section.getBoundingClientRect();
+  const progress = -rect.top / (section.offsetHeight - window.innerHeight);
+  return Math.min(1, Math.max(0, progress));
+}
+
 window.addEventListener("scroll", function () {
-  const maxScroll = document.body.scrollHeight - window.innerHeight;
-  const progress = window.scrollY / maxScroll;
+  const progress1 = getSectionProgress(scene1);
+  const progress2 = getSectionProgress(scene2);
 
   pieces.forEach(function (piece, index) {
     const depth = index * 12;
-    const rotateAmount = progress * 360;
-    const buildAmount = progress * index * 4;
+    const rotateAmount = progress1 * 360;
+    const buildAmount = progress1 * index * 4;
 
-    piece.style.opacity = progress;
+    piece.style.opacity = progress1;
 
     piece.style.transform = `
       translateZ(${depth}px)
       translateY(${120 - buildAmount}px)
       rotateX(70deg)
       rotateZ(${rotateAmount + index * 12}deg)
-      scale(${0.2 + progress * 0.9})
+      scale(${0.2 + progress1 * 0.9})
     `;
   });
 
-  const dreamProgress = Math.min(1, Math.max(0, (progress - 0.95) / 0.05));
-
   dreamPieces.forEach(function (piece, index) {
-    const depth = index * 40;
-    const rotateAmount = dreamProgress * 720;
-    const moveAmount = dreamProgress * index * 60;
+    const depth = index * 4;
+    const rotateAmount = progress2 * 720;
+    const moveAmount = progress2 * index * 1.5;
 
-    piece.style.opacity = dreamProgress;
+    piece.style.opacity = progress2;
 
     piece.style.transform = `
-    translateZ(${depth}px)
-    translateY(${-200 + moveAmount}px)
-    rotateX(${dreamProgress * 180}deg)
-    rotateY(${rotateAmount + index * 45}deg)
-    scale(${0.2 + dreamProgress * 1.5})
-  `;
+      translateZ(${depth}px)
+      translateY(${-150 + moveAmount}px)
+      rotateX(${progress2 * 180}deg)
+      rotateY(${rotateAmount + index * 8}deg)
+      scale(${0.2 + progress2 * 1.2})
+    `;
   });
-
-  if (progress > 0.69 && sceneChanged === false) {
-    sceneChanged = true;
-
-    document.querySelector("#scene1").style.opacity = "0";
-    document.querySelector("#scene2").classList.add("active");
-  }
 });
