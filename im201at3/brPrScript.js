@@ -29,7 +29,10 @@ window.addEventListener("scroll", function () {
     const rotateAmount = progress1 * 360;
     const buildAmount = progress1 * index * 4;
 
-    piece.style.opacity = Math.max(0, progress1 - progress2);
+    const fadeOutPoint = 0.45;
+    const fadeAmount = Math.min(1, progress2 / fadeOutPoint);
+
+    piece.style.opacity = progress1 * (1 - fadeAmount);
 
     piece.style.transform = `
       translateZ(${depth}px)
@@ -66,7 +69,7 @@ window.addEventListener("scroll", function () {
     resetTriggered = true;
 
     window.scrollTo({
-      top: scene1.offsetTop + 300,
+      top: scene1.offsetTop + scene1.offsetHeight * 0.88,
       behavior: "smooth",
     });
   }
