@@ -66,7 +66,7 @@ window.addEventListener("scroll", function () {
     resetTriggered = true;
 
     window.scrollTo({
-      top: scene1.offsetTop + 200,
+      top: scene1.offsetTop + 300,
       behavior: "smooth",
     });
   }
