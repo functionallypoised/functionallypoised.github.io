@@ -1,3 +1,4 @@
+console.log("Scroll script connected");
 const pieces = document.querySelectorAll(".piece");
 
 window.addEventListener("scroll", function () {
