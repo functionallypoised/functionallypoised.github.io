@@ -39,18 +39,25 @@ window.addEventListener("scroll", function () {
   });
 
   dreamPieces.forEach(function (piece, index) {
-    const depth = index * 4;
+    const middlePeak = Math.sin(progress2 * Math.PI);
+
+    const depth = index * (4 + middlePeak * 8);
     const rotateAmount = progress2 * 720;
     const moveAmount = progress2 * index * 1.5;
+
+    const wideScale = 0.2 + progress2 * 1.2 + middlePeak * 1.4;
+    const middleWidth = middlePeak * index * 3;
 
     piece.style.opacity = progress2;
 
     piece.style.transform = `
-      translateZ(${depth}px)
-      translateY(${-150 + moveAmount}px)
-      rotateX(${progress2 * 180}deg)
-      rotateY(${rotateAmount + index * 8}deg)
-      scale(${0.2 + progress2 * 1.2})
-    `;
+    translateZ(${depth}px)
+    translateX(${-middleWidth}px)
+    translateY(${-150 + moveAmount}px)
+    rotateX(${progress2 * 180 + middlePeak * 50}deg)
+    rotateY(${rotateAmount + index * 8}deg)
+    rotateZ(${middlePeak * 25}deg)
+    scale(${wideScale})
+  `;
   });
 });
