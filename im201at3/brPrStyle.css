@@ -2,13 +2,20 @@ body {
   margin: 0;
   background: #0f1412;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: "CoralPixels", sans-serif;
 }
 
 .intro {
   height: 100vh;
   display: grid;
   place-items: center;
+}
+
+@font-face {
+  font-family: "CoralPixels";
+  src: url("fonts/CoralPixels.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .scroll-space {
