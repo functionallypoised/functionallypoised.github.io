@@ -2,7 +2,7 @@ body {
   margin: 0;
   background: #092222;
   color: rgb(255, 255, 255);
-  font-family: "CoralPixels", sans-serif;
+  font-family: "HonickFree", sans-serif;
 }
 
 .intro {
@@ -12,8 +12,8 @@ body {
 }
 
 @font-face {
-  font-family: "CoralPixels";
-  src: url("fonts/CoralPixels-Regular.ttf") format("truetype");
+  font-family: "HonickFree";
+  src: url("fonts/HonickFree-Thin.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
