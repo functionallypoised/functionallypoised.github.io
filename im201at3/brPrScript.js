@@ -1,5 +1,7 @@
 console.log("Scroll script connected");
 
+let resetTriggered = false;
+
 const pieces = document.querySelectorAll(".piece");
 const dreamPieces = document.querySelectorAll(".dreamPiece");
 
@@ -59,4 +61,17 @@ window.addEventListener("scroll", function () {
     scale(${wideScale})
   `;
   });
+
+  if (progress2 > 0.99 && !resetTriggered) {
+    resetTriggered = true;
+
+    window.scrollTo({
+      top: scene1.offsetTop + 200,
+      behavior: "smooth",
+    });
+  }
+
+  if (progress2 < 0.5) {
+    resetTriggered = false;
+  }
 });
