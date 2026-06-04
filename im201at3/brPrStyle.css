@@ -49,3 +49,35 @@ body {
   background: rgba(80, 180, 140, 0.15);
   transition: transform 0.1s linear, opacity 0.1s linear;
 }
+
+#scene2 {
+  opacity: 0;
+  visibility: hidden;
+
+  position: fixed;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  background: #051010;
+
+  transition: opacity 2s;
+}
+
+#scene2.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dreamPiece {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 110px;
+  top: 110px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  transition: transform 0.1s linear, opacity 0.1s linear;
+}
