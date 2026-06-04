@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  background: #0f1412;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.intro {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.scroll-space {
+  height: 300vh;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  perspective: 900px;
+}
+
+.object {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+}
+
+.piece {
+  position: absolute;
+  width: 180px;
+  height: 20px;
+  left: 60px;
+  top: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(180, 255, 220, 0.8);
+  background: rgba(80, 180, 140, 0.15);
+  transition: transform 0.1s linear, opacity 0.1s linear;
+}
