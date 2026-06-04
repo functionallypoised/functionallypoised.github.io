@@ -21,7 +21,7 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  perspective: 900px;
+  perspective: 2000px;
 }
 
 .object {
