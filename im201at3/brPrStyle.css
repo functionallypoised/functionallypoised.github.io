@@ -19,7 +19,7 @@ body {
 }
 
 .scroll-space {
-  height: 300vh;
+  height: 800vh;
 }
 
 .stage {
@@ -47,7 +47,7 @@ body {
   border-radius: 50%;
   border: 2px solid rgba(180, 255, 220, 0.8);
   background: rgba(80, 180, 140, 0.15);
-  transition: transform 0.1s linear, opacity 0.1s linear;
+  transition: transform 0.1s linear, opacity 0.1s ease-out;
 }
 
 
@@ -71,5 +71,5 @@ body {
   border: 1px solid rgba(75, 129, 146, 0.5);
   background: rgba(2, 90, 105, 0.08);
   border-radius: 4px;
-  transition: transform 0.1s linear, opacity 0.1s linear;
+  transition: transform 0.1s linear, opacity 0.1s ease-out;
 }
