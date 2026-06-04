@@ -52,7 +52,6 @@ window.addEventListener("scroll", function () {
 
     piece.style.transform = `
     translateZ(${depth}px)
-    translateX(${-middleWidth}px)
     translateY(${-150 + moveAmount}px)
     rotateX(${progress2 * 180 + middlePeak * 50}deg)
     rotateY(${rotateAmount + index * 8}deg)
