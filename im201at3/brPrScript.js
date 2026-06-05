@@ -27,7 +27,7 @@ window.addEventListener("scroll", function () {
   pieces.forEach(function (piece, index) {
     const returnAmount = Math.min(1, progress2 / 0.45);
 
-    const pieceProgress = progress1 * (1 - returnAmount) + 0.12 * returnAmount;
+    const pieceProgress = progress1 * (1 - returnAmount) + 0.08 * returnAmount;
 
     const depth = index * 12;
     const rotateAmount = pieceProgress * 360;
