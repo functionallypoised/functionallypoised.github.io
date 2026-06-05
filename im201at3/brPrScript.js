@@ -22,7 +22,9 @@ window.addEventListener("scroll", function () {
   ${9 - progress2 * 7},
   ${34 - progress2 * 1},
   ${34 + progress2 * 7}
-)`;
+  
+  )`;
+  document.body.style.backgroundSize = `${18 + progress2 * 6}px ${17 + progress2 * 6}px`;
 
   pieces.forEach(function (piece, index) {
     const returnAmount = Math.min(1, progress2 / 0.45);
